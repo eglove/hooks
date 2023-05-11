@@ -12,7 +12,7 @@ const build = async () => {
     execSync('tsc --project tsconfig.json');
 
     await esbuild({
-        bundle: true,
+        bundle: false,
         entryPoints: ['src/*.ts'],
         loader: {'.ts': 'ts'},
         minify: true,
