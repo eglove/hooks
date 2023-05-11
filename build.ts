@@ -27,6 +27,10 @@ const build = async () => {
         path.join(root, 'package.json'),
         path.join(root, 'dist', 'package.json'),
     );
+
+    execSync('cd dist');
+    execSync('npm publish --access public');
+    execSync('cd ..');
 };
 
 build()
