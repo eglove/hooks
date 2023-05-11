@@ -1,6 +1,7 @@
 {
   "name": "@ethang/hooks",
   "author": "Ethan Glover",
+  "repository": "https://github.com/eglove/hooks",
   "license": "ISC",
   "version": "0.2.1",
   "description": "",
