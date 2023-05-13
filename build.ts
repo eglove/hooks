@@ -9,7 +9,6 @@ const build = async () => {
     const root = __dirname;
 
     await rimraf(path.join(root, 'dist')).catch();
-    execSync('tsc --project tsconfig.json');
 
     await esbuild({
         bundle: false,
