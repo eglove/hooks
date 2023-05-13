@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node build.ts"
+    "build": "node build.mjs"
   },
   "peerDependencies": {
     "react": "^18.0.0"
