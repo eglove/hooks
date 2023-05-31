@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^2.2.2
     version: 2.2.2(esbuild@0.17.19)
   eslint-config-ethang:
-    specifier: ^5.0.6
-    version: 5.0.6(eslint@8.41.0)(prettier@2.8.8)(tailwindcss@3.3.2)(typescript@5.0.4)
+    specifier: ^5.0.7
+    version: 5.0.7(eslint@8.41.0)(prettier@2.8.8)(tailwindcss@3.3.2)(typescript@5.0.4)
   rimraf:
     specifier: ^5.0.1
     version: 5.0.1
@@ -997,8 +997,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /dotenv@16.0.3:
-    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+  /dotenv@16.1.2:
+    resolution: {integrity: sha512-RiNjjDF5yr9NtjqJqmWYA/XZShmt3r8FtJgAaqTiYqb99SqT0+aw5xAwOIvjMyXsH/C9/fLNafFkkZDwRi1KHA==}
     engines: {node: '>=12'}
     dev: true
 
@@ -1161,8 +1161,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-ethang@5.0.6(eslint@8.41.0)(prettier@2.8.8)(tailwindcss@3.3.2)(typescript@5.0.4):
-    resolution: {integrity: sha512-lo4mJ+gGj2jMTR3Gltgz/uD3QCPWqWlH5yvWBi737qW5qzGM5QBWrQyfvRhihOora6CyWhXbBMJJ6zTFzeu3FA==}
+  /eslint-config-ethang@5.0.7(eslint@8.41.0)(prettier@2.8.8)(tailwindcss@3.3.2)(typescript@5.0.4):
+    resolution: {integrity: sha512-IxxwV+WCukK7LEvumI77x1Hg8zGxe1QeeqyDG8hqckE6OQP9eqQaiOujik7WaR81vJNs/sKgrWnXV6Vm2QjMUA==}
     peerDependencies:
       eslint: ^8.38.0
       prettier: ^2.8.7
@@ -1184,7 +1184,7 @@ packages:
       eslint-plugin-react-hooks: 4.6.0(eslint@8.41.0)
       eslint-plugin-simple-import-sort: 10.0.0(eslint@8.41.0)
       eslint-plugin-sort-keys-fix: 1.1.2
-      eslint-plugin-tailwindcss: 3.12.0(tailwindcss@3.3.2)
+      eslint-plugin-tailwindcss: 3.12.1(tailwindcss@3.3.2)
       eslint-plugin-typescript-sort-keys: 2.3.0(@typescript-eslint/parser@5.59.8)(eslint@8.41.0)(typescript@5.0.4)
       eslint-plugin-unicorn: 47.0.0(eslint@8.41.0)
       eslint-plugin-unused-imports: 2.0.0(@typescript-eslint/eslint-plugin@5.59.8)(eslint@8.41.0)
@@ -1369,8 +1369,8 @@ packages:
       requireindex: 1.2.0
     dev: true
 
-  /eslint-plugin-tailwindcss@3.12.0(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-DMfg8NcSV04V1v3iBgJGEhmRuapW36XZXyRV8WHdNFGEXGUkBwM9R8MujguKXeQKBG6VhjiX4t98rhzXdIlUFw==}
+  /eslint-plugin-tailwindcss@3.12.1(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-LyIRV0rx6prTpJZsSCXSNJ34Yry3Nj9OJwvzh1xTsiG6+UCnAPW1Bx41s7vZzUDKMlwFgpUN9Me+NK12T4DHYg==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.3.2
@@ -3270,7 +3270,7 @@ packages:
     dependencies:
       '@types/postcss-modules-local-by-default': 4.0.0
       '@types/postcss-modules-scope': 3.0.1
-      dotenv: 16.0.3
+      dotenv: 16.1.2
       icss-utils: 5.1.0(postcss@8.4.24)
       less: 4.1.3
       lodash.camelcase: 4.3.0
