@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^2.2.2
     version: 2.2.2(esbuild@0.18.13)
   eslint-config-ethang:
-    specifier: ^6.5.0
-    version: 6.5.0(eslint@8.45.0)(prettier@3.0.0)(tailwindcss@3.3.3)(typescript@5.1.6)
+    specifier: ^6.5.1
+    version: 6.5.1(eslint@8.45.0)(prettier@3.0.0)(tailwindcss@3.3.3)(typescript@5.1.6)
   rimraf:
     specifier: ^5.0.1
     version: 5.0.1
@@ -1239,7 +1239,7 @@ packages:
     dependencies:
       chokidar: 3.5.3
       esbuild: 0.18.13
-      fast-glob: 3.2.12
+      fast-glob: 3.3.0
       minimatch: 9.0.1
       tiny-invariant: 1.3.1
       unixify: 1.0.0
@@ -1285,8 +1285,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-ethang@6.5.0(eslint@8.45.0)(prettier@3.0.0)(tailwindcss@3.3.3)(typescript@5.1.6):
-    resolution: {integrity: sha512-NW7tNtw16KUFoHFmU2I+eQqvdLcD/Sgs7QySmzqeSS9iDDGR4SmErXPqQRirXdsaPgnZ2owytVzO0Bohu44C/w==}
+  /eslint-config-ethang@6.5.1(eslint@8.45.0)(prettier@3.0.0)(tailwindcss@3.3.3)(typescript@5.1.6):
+    resolution: {integrity: sha512-dOzit+XlMAu1kHBE1UlqEp/nYuBbEzlWC7dl6IBL9jeovbxbLn+0CXnr16GseHo1GtyB1frfoHFuKpKtcvk5yQ==}
     peerDependencies:
       eslint: ^8.44.0
       prettier: ^3.0.0
@@ -1726,17 +1726,6 @@ packages:
 
   /fast-diff@1.3.0:
     resolution: {integrity: sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==}
-    dev: true
-
-  /fast-glob@3.2.12:
-    resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
-    engines: {node: '>=8.6.0'}
-    dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
-      glob-parent: 5.1.2
-      merge2: 1.4.1
-      micromatch: 4.0.5
     dev: true
 
   /fast-glob@3.3.0:
