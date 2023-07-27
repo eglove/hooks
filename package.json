@@ -17,10 +17,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.4.5",
-    "@types/react": "^18.2.16",
+    "@types/react": "^18.2.17",
     "esbuild": "^0.18.17",
     "esbuild-plugin-glob": "^2.2.2",
-    "eslint-config-ethang": "^6.7.2",
+    "eslint-config-ethang": "^6.8.0",
     "react": "^18.2.0",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
