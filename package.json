@@ -16,7 +16,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.4.7",
+    "@types/node": "^20.4.8",
     "@types/react": "^18.2.18",
     "esbuild": "^0.18.17",
     "esbuild-plugin-glob": "^2.2.2",
