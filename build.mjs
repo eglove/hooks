@@ -1,6 +1,5 @@
 import { rimraf } from 'rimraf';
 import { build as esbuild } from 'esbuild';
-import { globPlugin } from 'esbuild-plugin-glob';
 import fs from 'node:fs';
 import { execSync } from 'child_process';
 
@@ -13,7 +12,6 @@ await esbuild({
   minify: true,
   outdir: 'dist',
   platform: 'browser',
-  plugins: [globPlugin()],
   sourcemap: true,
   target: 'esnext',
 });
