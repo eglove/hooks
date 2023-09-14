@@ -3,7 +3,7 @@
   "author": "Ethan Glover",
   "repository": "https://github.com/eglove/hooks",
   "license": "ISC",
-  "version": "1.2.32",
+  "version": "1.2.33",
   "description": "",
   "main": "index.js",
   "scripts": {
