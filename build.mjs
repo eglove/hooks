@@ -1,24 +1,14 @@
 import { rimraf } from 'rimraf';
-import { build as esbuild } from 'esbuild';
 import fs from 'node:fs';
 import { execSync } from 'child_process';
 
 await rimraf('dist');
 
-await esbuild({
-  bundle: false,
-  entryPoints: ['src/*.ts'],
-  loader: { '.ts': 'ts' },
-  minify: true,
-  outdir: 'dist',
-  platform: 'browser',
-  sourcemap: true,
-  target: 'esnext',
-});
+execSync('tsc --project tsconfig.json');
 
 fs.copyFileSync(
   'package.json',
   'dist/package.json',
 );
 
-execSync('tsc --project tsconfig.json && cd dist && npm publish --access public && cd ..');
+execSync('cd dist && npm publish --access public && cd ..')

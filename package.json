@@ -18,7 +18,6 @@
   "devDependencies": {
     "@types/node": "^20.6.4",
     "@types/react": "^18.2.22",
-    "esbuild": "^0.19.3",
     "eslint-config-ethang": "^11.0.1",
     "react": "^18.2.0",
     "rimraf": "^5.0.1",
