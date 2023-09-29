@@ -16,11 +16,11 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.7.0",
-    "@types/react": "^18.2.22",
-    "eslint-config-ethang": "^11.0.2",
+    "@types/node": "^20.7.1",
+    "@types/react": "^18.2.23",
+    "eslint-config-ethang": "^11.1.6",
     "react": "^18.2.0",
-    "rimraf": "^5.0.4",
+    "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   }
 }
