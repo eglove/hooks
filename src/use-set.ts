@@ -1,30 +1,29 @@
 import { useState } from 'react';
 
-type UseSet<SetType> = Omit<Set<SetType>, 'add' | 'delete'>;
-
-type UseSetReturn<SetType> = {
-  add: (value: SetType) => void;
-  remove: (value: SetType) => void;
-  set: UseSet<SetType>;
-};
-
 export function useSet<SetType>(
   values?: SetType[] | undefined | null,
-): UseSetReturn<SetType> {
+): Set<SetType> {
   const [set, setSet] = useState(new Set(values));
 
-  const add = (value: SetType): void => {
-    setSet(set_ => {
-      return set_.add(value);
-    });
+  // eslint-disable-next-line functional/immutable-data
+  set.add = (value: SetType): Set<SetType> => {
+    const set_ = new Set(set);
+    const returnValue = set_.add(value);
+
+    setSet(set_);
+
+    return returnValue;
   };
 
-  const remove = (value: SetType): void => {
-    setSet(set_ => {
-      set_.delete(value);
-      return new Set(set_);
-    });
+  // eslint-disable-next-line functional/immutable-data
+  set.delete = (value: SetType): boolean => {
+    const set_ = new Set(set);
+    const returnValue = set_.delete(value);
+
+    setSet(set_);
+
+    return returnValue;
   };
 
-  return { add, remove, set };
+  return set;
 }
