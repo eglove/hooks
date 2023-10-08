@@ -9,7 +9,7 @@ type UseSetReturn<SetType> = {
 };
 
 export function useSet<SetType>(
-  values: SetType[] | undefined | null,
+  values?: SetType[] | undefined | null,
 ): UseSetReturn<SetType> {
   const [set, setSet] = useState(new Set(values));
 
