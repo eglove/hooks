@@ -16,7 +16,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.9.4",
+    "@types/node": "^20.10.0",
     "@types/react": "^18.2.38",
     "eslint-config-ethang": "^11.4.16",
     "react": "^18.2.0",
