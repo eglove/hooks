@@ -25,5 +25,13 @@ export function useSet<SetType>(
     return returnValue;
   };
 
+  // eslint-disable-next-line functional/immutable-data
+  set.clear = (): void => {
+    const set_ = new Set(set);
+    set_.clear();
+
+    setSet(set_);
+  };
+
   return set;
 }
