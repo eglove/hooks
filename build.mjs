@@ -1,5 +1,4 @@
 import {projectBuilder} from '@ethang/project-builder/project-builder.js';
-import { execSync } from 'child_process';
 
 await projectBuilder('hooks', 'main', {
   preVersionBumpScripts: ['UPDATE', 'PRUNE'],
@@ -12,5 +11,3 @@ await projectBuilder('hooks', 'main', {
     entry: ['src/*'],
   }
 })
-
-execSync('cd dist && npm publish --access public && cd ..')
