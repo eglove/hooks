@@ -20,9 +20,7 @@ export const useFullscreen = (
   reference: MutableRefObject<HTMLElement>,
 ): UseFullscreenReturn => {
   const initialState =
-    typeof window !== 'undefined' && window.document
-      ? Boolean(document.fullscreenElement)
-      : false;
+    typeof window === 'undefined' ? false : Boolean(document.fullscreenElement);
   const [fullScreen, setFullScreen] = useState(initialState);
 
   const openFullScreen = (): void => {
