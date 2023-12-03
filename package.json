@@ -7,15 +7,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --fix",
     "build": "node build.mjs"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^18.2.0"
   },
   "dependencies": {
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@ethang/project-builder": "^1.0.7",
     "@types/node": "^20.10.2",
     "@types/react": "^18.2.41",
     "eslint-config-ethang": "^11.5.10",
