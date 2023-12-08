@@ -20,7 +20,7 @@
     "@ethang/project-builder": "^1.1.12",
     "@types/node": "^20.10.4",
     "@types/react": "^18.2.42",
-    "eslint-config-ethang": "^11.5.19",
+    "eslint-config-ethang": "^11.5.20",
     "react": "^18.2.0",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
