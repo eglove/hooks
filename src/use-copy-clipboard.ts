@@ -16,16 +16,16 @@ export const useCopyClipboard = (
 
   const copyToClipboard = (text: string): void => {
     const asyncCopy = async (): Promise<void> => {
-      navigator.clipboard
-        .writeText(text)
-        .then(() => {
-          setIsCopied(true);
-          return null;
-        })
-        .catch((writeTextError: Error) => {
-          setError(writeTextError);
-          setIsCopied(false);
-        });
+      try {
+        await navigator.clipboard.writeText(text);
+        setIsCopied(true);
+      } catch (writeTextError: unknown) {
+        if (error instanceof Error) {
+          setError(writeTextError as Error);
+        }
+
+        setIsCopied(false);
+      }
     };
 
     asyncCopy().catch((asyncError: Error) => {

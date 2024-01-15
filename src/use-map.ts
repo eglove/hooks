@@ -5,7 +5,6 @@ export function useMap<T, U>(
 ): Map<T, U> {
   const [map, setMap] = useState(new Map(values));
 
-  // eslint-disable-next-line functional/immutable-data
   map.set = (key: T, value: U): Map<T, U> => {
     const map_ = new Map(map);
     const returnValue = map_.set(key, value);
@@ -14,7 +13,6 @@ export function useMap<T, U>(
     return returnValue;
   };
 
-  // eslint-disable-next-line functional/immutable-data
   map.delete = (key: T): boolean => {
     const map_ = new Map(map);
     const returnValue = map_.delete(key);
@@ -23,7 +21,6 @@ export function useMap<T, U>(
     return returnValue;
   };
 
-  // eslint-disable-next-line functional/immutable-data
   map.clear = (): void => {
     const map_ = new Map(map);
     map_.clear();
