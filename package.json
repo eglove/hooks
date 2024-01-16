@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@ethang/project-builder": "^1.1.16",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.47",
+    "@types/node": "^20.11.3",
+    "@types/react": "^18.2.48",
     "eslint-config-ethang": "^11.7.12",
     "react": "^18.2.0",
     "rimraf": "^5.0.5",
