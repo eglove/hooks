@@ -1,17 +1,18 @@
 import { useEffect } from 'react';
+
 export type IntervalCallback = (time: number | undefined) => void;
 
-export const animationInterval = (
+export function animationInterval(
   ms: number,
   signal: AbortSignal,
   callback: IntervalCallback,
-): void => {
+): void {
   const start =
     document.timeline === undefined
       ? performance.now()
       : document.timeline.currentTime;
 
-  const startNumber = start === null ? null : Number(start);
+  const startNumber: number | null = start === null ? null : Number(start);
 
   const frame = (time: number): void => {
     if (signal.aborted) {
@@ -35,7 +36,7 @@ export const animationInterval = (
   };
 
   scheduleFrame(startNumber ?? 0);
-};
+}
 
 export const useAnimationInterval = (
   ms: number,

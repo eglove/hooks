@@ -5,7 +5,7 @@ import { animationInterval } from './use-animation-interval';
 type UseDimensionsReturn = {
   dimensions: DOMRect | Record<string, unknown>;
   element: Element | undefined;
-  reference: (newNode: Element) => void;
+  reference: (node: Element) => void;
 };
 
 export const useDimensions = ({
@@ -19,8 +19,8 @@ export const useDimensions = ({
   >(initialDimensions);
   const [element, setElement] = useState<Element | undefined>();
 
-  const reference = useCallback((newNode: Element | undefined) => {
-    setElement(newNode);
+  const reference = useCallback((node: Element | undefined) => {
+    setElement(node);
   }, []);
 
   useLayoutEffect((): (() => void) | undefined => {
@@ -32,10 +32,10 @@ export const useDimensions = ({
 
     const measure = (): void => {
       requestAnimationFrame(() => {
-        const newDimensions = element.getBoundingClientRect();
+        const boundingRect = element.getBoundingClientRect();
 
         animationInterval(delay, controller.signal, () => {
-          setDimensions(newDimensions);
+          setDimensions(boundingRect);
         });
       });
     };

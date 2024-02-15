@@ -7,7 +7,7 @@ export const useLocalStorage = <ValueType>(
   defaultValue?: ValueType,
   deserialize = JSON.parse,
   serialize = JSON.stringify,
-): [LocalStorageType<ValueType>, (newValue: ValueType) => void] => {
+): [LocalStorageType<ValueType>, (value: ValueType) => void] => {
   const [storedValue, setStoredValue] = useState<LocalStorageType<ValueType>>(
     () => {
       const value = globalThis?.localStorage.getItem(keyName);
@@ -28,18 +28,18 @@ export const useLocalStorage = <ValueType>(
     },
   );
 
-  const setValue = (newValue: ValueType): void => {
-    if (typeof newValue === 'string') {
-      globalThis?.localStorage.setItem(keyName, newValue);
+  const setValue = (value: ValueType): void => {
+    if (typeof value === 'string') {
+      globalThis?.localStorage.setItem(keyName, value);
     } else {
       try {
-        globalThis?.localStorage.setItem(keyName, serialize(newValue));
+        globalThis?.localStorage.setItem(keyName, serialize(value));
       } catch {
         throw new Error(`Failed to set ${keyName} in local storage.`);
       }
     }
 
-    setStoredValue(newValue);
+    setStoredValue(value);
   };
 
   return [storedValue, setValue];
