@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-type WindowEventMapPlus = WindowEventMap & Record<string, unknown>;
+type WindowEventMapPlus = Record<string, unknown> & WindowEventMap;
 
 export const useEventListener = <Type extends keyof WindowEventMapPlus>(
   type: Type,

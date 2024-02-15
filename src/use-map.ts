@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-export function useMap<T, U>(
-  values?: Array<[T, U]> | undefined | null,
-): Map<T, U> {
+export function useMap<T, U>(values?: [T, U][] | null | undefined): Map<T, U> {
   const [map, setMap] = useState(new Map(values));
 
   map.set = (key: T, value: U): Map<T, U> => {

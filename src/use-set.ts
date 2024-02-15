@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export function useSet<SetType>(
-  values?: SetType[] | undefined | null,
+  values?: SetType[] | null | undefined,
 ): Set<SetType> {
   const [set, setSet] = useState(new Set(values));
 
