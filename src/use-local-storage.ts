@@ -7,6 +7,7 @@ export const useLocalStorage = <ValueType>(
   defaultValue?: ValueType,
   deserialize = JSON.parse,
   serialize = JSON.stringify,
+  // eslint-disable-next-line @typescript-eslint/max-params
 ): [LocalStorageType<ValueType>, (value: ValueType) => void] => {
   const [storedValue, setStoredValue] = useState<LocalStorageType<ValueType>>(
     () => {

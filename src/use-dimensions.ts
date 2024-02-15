@@ -2,18 +2,28 @@ import { useCallback, useLayoutEffect, useState } from 'react';
 
 import { animationInterval } from './use-animation-interval';
 
+type UseDiemensionsProperties = {
+  delay?: number;
+  effectDeps: unknown[];
+  initialDimensions?: DOMRect | Record<string, unknown>;
+  liveMeasure?: boolean;
+};
+
 type UseDimensionsReturn = {
   dimensions: DOMRect | Record<string, unknown>;
   element: Element | undefined;
   reference: (node: Element) => void;
 };
 
+const DEFAULT_DELAY = 250;
+
+// eslint-disable-next-line max-lines-per-function
 export const useDimensions = ({
   liveMeasure = true,
-  delay = 250,
+  delay = DEFAULT_DELAY,
   initialDimensions = {},
   effectDeps = [],
-}): UseDimensionsReturn => {
+}: UseDiemensionsProperties): UseDimensionsReturn => {
   const [dimensions, setDimensions] = useState<
     DOMRect | Record<string, unknown>
   >(initialDimensions);

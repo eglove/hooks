@@ -65,6 +65,7 @@ const getZodFieldErrors = (
   return errors;
 };
 
+// eslint-disable-next-line max-lines-per-function
 export const useForm = <StateType extends Record<string, unknown>>(
   initialState: StateType,
   properties?: UseFormProperties<StateType>,
@@ -95,6 +96,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
     setFormState(initialState);
   };
 
+  // eslint-disable-next-line max-statements
   const handleChange = (event: ChangeEvent): void => {
     const eventTarget = event.target as unknown as {
       checked?: boolean;
@@ -129,6 +131,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
     properties?.onChange?.(event);
   };
 
+  // eslint-disable-next-line max-statements
   const handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
 
@@ -163,7 +166,10 @@ export const useForm = <StateType extends Record<string, unknown>>(
     }
   };
 
-  const setValue = (key: keyof StateType, value: StateType[typeof key]) => {
+  const setValue = (
+    key: keyof StateType,
+    value: StateType[typeof key],
+  ): void => {
     setFormState(previousState => {
       return {
         ...previousState,

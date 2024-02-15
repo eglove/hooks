@@ -1,3 +1,4 @@
+import { isNil } from '@ethang/toolbelt/is/nil';
 import { useEffect } from 'react';
 
 export type IntervalCallback = (time: number | undefined) => void;
@@ -7,12 +8,12 @@ export function animationInterval(
   signal: AbortSignal,
   callback: IntervalCallback,
 ): void {
-  const start =
-    document.timeline === undefined
-      ? performance.now()
-      : document.timeline.currentTime;
+  const start = isNil(document.timeline)
+    ? performance.now()
+    : document.timeline.currentTime;
 
-  const startNumber: number | null = start === null ? null : Number(start);
+  const DEFAULT_START = 0;
+  const startNumber = start === null ? DEFAULT_START : Number(start);
 
   const frame = (time: number): void => {
     if (signal.aborted) {
@@ -24,7 +25,7 @@ export function animationInterval(
   };
 
   const scheduleFrame = (time: number | undefined): void => {
-    if (time !== undefined && startNumber !== null) {
+    if (time !== undefined) {
       const elapsed = time - startNumber;
       const roundedElapsed = Math.round(elapsed / ms) * ms;
       const targetNext = startNumber + roundedElapsed + ms;
@@ -35,7 +36,7 @@ export function animationInterval(
     }
   };
 
-  scheduleFrame(startNumber ?? 0);
+  scheduleFrame(startNumber);
 }
 
 export const useAnimationInterval = (

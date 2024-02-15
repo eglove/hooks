@@ -8,8 +8,10 @@ type UseCopyClipboardReturn = {
   isCopied: boolean;
 };
 
+const DEFAULT_DURATION = 2000;
+
 export const useCopyClipboard = (
-  successDuration = 2000,
+  successDuration = DEFAULT_DURATION,
 ): UseCopyClipboardReturn => {
   const [isCopied, setIsCopied] = useState(false);
   const [error, setError] = useState<Error>();
