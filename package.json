@@ -25,7 +25,6 @@
     "eslint-config-ethang": "^13.0.13",
     "react": "^18.2.0",
     "rimraf": "^5.0.5",
-    "type-fest": "^4.10.2",
     "typescript": "^5.3.3"
   }
 }
