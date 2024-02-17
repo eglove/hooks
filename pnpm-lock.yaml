@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ethang/toolbelt':
-    specifier: ^1.0.11
-    version: 1.0.11(@total-typescript/ts-reset@0.5.1)(convert@4.14.1)(idb@8.0.0)(zod@3.22.4)
+    specifier: ^1.0.16
+    version: 1.0.16(@total-typescript/ts-reset@0.5.1)(convert@4.14.1)(idb@8.0.0)(zod@3.22.4)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -17,8 +17,8 @@ dependencies:
 
 devDependencies:
   '@ethang/project-builder':
-    specifier: ^1.1.21
-    version: 1.1.21(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.14)(rimraf@5.0.5)(simple-git@3.22.0)(tsup@8.0.2)(typescript@5.3.3)
+    specifier: ^1.1.22
+    version: 1.1.22(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.14)(rimraf@5.0.5)(simple-git@3.22.0)(tsup@8.0.2)(typescript@5.3.3)
   '@types/node':
     specifier: ^20.11.19
     version: 20.11.19
@@ -324,8 +324,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ethang/project-builder@1.1.21(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.14)(rimraf@5.0.5)(simple-git@3.22.0)(tsup@8.0.2)(typescript@5.3.3):
-    resolution: {integrity: sha512-Kt1WDzfO/YjAOtiyLm8JNDe0qmTWPSt5uu/K3gYvYWQSdNzmdYmtoKNZPkB8CAznubDq0Z0rQL3wScQm+/uI8Q==}
+  /@ethang/project-builder@1.1.22(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.14)(rimraf@5.0.5)(simple-git@3.22.0)(tsup@8.0.2)(typescript@5.3.3):
+    resolution: {integrity: sha512-Lg80TltsFBl7Q+1tLD7JPqY9ABfA0j6dqbmqOS7sxd2Pul9T9irbru7oOHm/H8bq7RT45cMhjpLSdCcsewp+7w==}
     peerDependencies:
       '@ethang/util': ^3.1.1
       chalk: ^5.3.0
@@ -344,8 +344,8 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /@ethang/toolbelt@1.0.11(@total-typescript/ts-reset@0.5.1)(convert@4.14.1)(idb@8.0.0)(zod@3.22.4):
-    resolution: {integrity: sha512-ZeJuUsfKZSM0G2i1Dqc//IsMnPfyLlUfWuTEoJL4iwNBsy6Epb6S/eIKtGesdK27Qp2x8F4V3rMY2rQuACPutw==}
+  /@ethang/toolbelt@1.0.16(@total-typescript/ts-reset@0.5.1)(convert@4.14.1)(idb@8.0.0)(zod@3.22.4):
+    resolution: {integrity: sha512-aTJL47ClLy/qdgrKpnmxyPHN22SrhTqUbNTNx8b9jmVd5odhexqJSDeZPGhHMhCXcWScj5bcNSIfJJDLd0jGVw==}
     peerDependencies:
       '@total-typescript/ts-reset': ^0.5.1
       convert: ^4.14.1
