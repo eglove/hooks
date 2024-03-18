@@ -1,5 +1,7 @@
+import { tryCatch } from '@ethang/toolbelt/functional/try-catch';
+import { isNil } from '@ethang/toolbelt/is/nil';
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { z } from 'zod';
 import { ZodError } from 'zod';
 
@@ -28,6 +30,7 @@ export type UseFormReturn<StateType> = {
   setFormError: Dispatch<SetStateAction<string | undefined>>;
   setFormState: Dispatch<SetStateAction<StateType>>;
   setValue: (key: keyof StateType, value: StateType[typeof key]) => void;
+  validate: () => boolean;
 };
 
 const setAll = <ObjectType extends Record<string, unknown>, ValueType>(
@@ -43,29 +46,7 @@ const setAll = <ObjectType extends Record<string, unknown>, ValueType>(
   return fromEntries as unknown as ObjectType;
 };
 
-const getZodFieldErrors = (
-  error: unknown,
-  errorMap: Record<string, unknown>,
-): Record<string, string[]> => {
-  let errors: Record<string, string[]> = {};
-
-  if (error instanceof ZodError) {
-    for (const key of Object.keys(errorMap)) {
-      const errorArray = error.formErrors.fieldErrors[key];
-
-      if (errorArray !== undefined) {
-        errors = {
-          ...errors,
-          [key]: errorArray,
-        };
-      }
-    }
-  }
-
-  return errors;
-};
-
-// eslint-disable-next-line max-lines-per-function
+// eslint-disable-next-line max-lines-per-function,max-statements
 export const useForm = <StateType extends Record<string, unknown>>(
   initialState: StateType,
   properties?: UseFormProperties<StateType>,
@@ -82,101 +63,119 @@ export const useForm = <StateType extends Record<string, unknown>>(
   const [formError, setFormError] = useState<string>();
   const [fieldErrors, setFieldErrors] = useState<FieldErrors<StateType>>();
 
-  const clearFieldErrors = (): void => {
+  const clearFieldErrors = useCallback((): void => {
     if (fieldErrors !== undefined) {
       setFieldErrors(setAll(fieldErrors, null));
     }
-  };
+  }, [fieldErrors]);
 
-  const clearForm = (): void => {
+  const clearForm = useCallback((): void => {
     setFormState(setAll(formState, ''));
-  };
+  }, [formState]);
 
-  const resetForm = (): void => {
+  const resetForm = useCallback((): void => {
     setFormState(initialState);
-  };
+  }, [initialState]);
 
-  // eslint-disable-next-line max-statements
-  const handleChange = (event: ChangeEvent): void => {
-    const eventTarget = event.target as unknown as {
-      checked?: boolean;
-      files: File[];
-      name: string;
-      type: string;
-      value: File | boolean | number | string;
-    };
-
-    let { value } = eventTarget;
-    const { checked, name, type, files } = eventTarget;
-
-    if (type === 'checkbox' && checked !== undefined) {
-      value = checked;
-    }
-
-    if (type === 'number' && typeof value === 'string') {
-      value = Number.parseFloat(value.replaceAll(',', ''));
-    }
-
-    if (type === 'file') {
-      [value] = files;
-    }
-
-    setFormState(formState_ => {
-      return {
-        ...formState_,
-        [name]: value,
+  const handleChange = useCallback(
+    // eslint-disable-next-line max-statements
+    (event: ChangeEvent): void => {
+      const eventTarget = event.target as unknown as {
+        checked?: boolean;
+        files: File[];
+        name: string;
+        type: string;
+        value: File | boolean | number | string;
       };
-    });
 
-    properties?.onChange?.(event);
-  };
+      let { value } = eventTarget;
+      const { checked, name, type, files } = eventTarget;
 
-  // eslint-disable-next-line max-statements
-  const handleSubmit = (event: FormEvent): void => {
-    event.preventDefault();
+      if (type === 'checkbox' && checked !== undefined) {
+        value = checked;
+      }
 
-    try {
-      properties?.zodValidator?.parse(formState);
-    } catch (error: unknown) {
-      const errors = getZodFieldErrors(error, formState) as typeof fieldErrors;
-      setFieldErrors(errors);
-      properties?.onFieldError?.(errors);
-      return;
-    }
+      if (type === 'number' && typeof value === 'string') {
+        value = Number.parseFloat(value.replaceAll(',', ''));
+      }
 
-    if (properties?.onSubmit === undefined) {
-      return;
-    }
+      if (type === 'file') {
+        [value] = files;
+      }
 
-    let hasException = false;
-    try {
-      properties.onSubmit();
-    } catch (error: unknown) {
-      hasException = true;
-      properties.onError?.(error);
+      setFormState(formState_ => {
+        return {
+          ...formState_,
+          [name]: value,
+        };
+      });
 
-      if (error instanceof Error) {
-        setFormError(error.message);
+      properties?.onChange?.(event);
+    },
+    [properties],
+  );
+
+  const validate = useCallback(() => {
+    if (!isNil(properties?.zodValidator)) {
+      const result = tryCatch(properties.zodValidator.parse(formState));
+
+      if (!result.isSuccess && result.error instanceof ZodError) {
+        const errors = result.error.formErrors
+          .fieldErrors as typeof fieldErrors;
+        setFieldErrors(errors);
+        properties.onFieldError?.(errors);
+        return false;
       }
     }
 
-    if (!hasException) {
-      clearFieldErrors();
-      setFormError('');
-    }
-  };
+    return true;
+  }, [formState, properties]);
 
-  const setValue = (
-    key: keyof StateType,
-    value: StateType[typeof key],
-  ): void => {
-    setFormState(previousState => {
-      return {
-        ...previousState,
-        [key]: value,
-      };
-    });
-  };
+  const handleSubmit = useCallback(
+    // eslint-disable-next-line max-statements
+    (event: FormEvent): void => {
+      event.preventDefault();
+
+      const validation = validate();
+      if (!validation) {
+        return;
+      }
+
+      if (properties?.onSubmit === undefined) {
+        return;
+      }
+
+      let hasException = false;
+      try {
+        properties.onSubmit();
+      } catch (error: unknown) {
+        hasException = true;
+        properties.onError?.(error);
+
+        if (error instanceof Error) {
+          setFormError(error.message);
+        }
+      }
+
+      if (!hasException) {
+        clearFieldErrors();
+        setFormError('');
+      }
+    },
+    [clearFieldErrors, properties, validate],
+  );
+
+  const setValue = useCallback(
+    (key: keyof StateType, value: StateType[typeof key]): void => {
+      setFormState(previousState => {
+        return {
+          ...previousState,
+          [key]: value,
+        };
+      });
+    },
+    [],
+  );
 
   return {
     clearFieldErrors,
@@ -191,5 +190,6 @@ export const useForm = <StateType extends Record<string, unknown>>(
     setFormError,
     setFormState,
     setValue,
+    validate,
   };
 };
