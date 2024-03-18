@@ -1,4 +1,3 @@
-import { tryCatch } from '@ethang/toolbelt/functional/try-catch';
 import { isNil } from '@ethang/toolbelt/is/nil';
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { useCallback, useState } from 'react';
@@ -117,9 +116,9 @@ export const useForm = <StateType extends Record<string, unknown>>(
 
   const validate = useCallback(() => {
     if (!isNil(properties?.zodValidator)) {
-      const result = tryCatch(properties.zodValidator.parse(formState));
+      const result = properties.zodValidator.safeParse(formState);
 
-      if (!result.isSuccess && result.error instanceof ZodError) {
+      if (!result.success && result.error instanceof ZodError) {
         const errors = result.error.formErrors
           .fieldErrors as typeof fieldErrors;
         setFieldErrors(errors);
