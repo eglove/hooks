@@ -6,6 +6,7 @@
   "version": "1.6.2",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint . --fix",
     "build": "node build.mjs"
