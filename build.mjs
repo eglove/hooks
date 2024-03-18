@@ -1,4 +1,4 @@
-import {projectBuilder} from '@ethang/project-builder/project-builder.js';
+import { projectBuilder } from '@ethang/project-builder/project-builder.js';
 
 await projectBuilder('hooks', 'main', {
   preVersionBumpScripts: ['UPDATE', 'PRUNE'],
@@ -16,5 +16,5 @@ await projectBuilder('hooks', 'main', {
     minify: true,
     outDir: 'dist',
     entry: ['src/*'],
-  }
-})
+  },
+});
