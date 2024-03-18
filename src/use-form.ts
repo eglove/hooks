@@ -1,4 +1,4 @@
-import { isNil } from '@ethang/toolbelt/is/nil.js';
+import { isNil } from '@ethang/toolbelt/is/nil';
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { useCallback, useState } from 'react';
 import type { z } from 'zod';
