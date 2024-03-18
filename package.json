@@ -16,7 +16,7 @@
     "zod": "^3.22.4"
   },
   "dependencies": {
-    "@ethang/toolbelt": "^1.2.0",
+    "@ethang/toolbelt": "^1.4.2",
     "react": "^18.2.0",
     "zod": "^3.22.4"
   },
