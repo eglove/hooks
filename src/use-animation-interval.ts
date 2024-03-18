@@ -1,4 +1,4 @@
-import { isNil } from '@ethang/toolbelt/is/nil';
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import { useEffect } from 'react';
 
 export type IntervalCallback = (time: number | undefined) => void;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { animationInterval } from './use-animation-interval';
+import { animationInterval } from './use-animation-interval.ts';
 
 type UseCopyClipboardReturn = {
   copyToClipboard: (text: string) => void;

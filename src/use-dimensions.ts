@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useState } from 'react';
 
-import { animationInterval } from './use-animation-interval';
+import { animationInterval } from './use-animation-interval.ts';
 
 type UseDiemensionsProperties = {
   delay?: number;
