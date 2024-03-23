@@ -28,7 +28,7 @@ export type UseFormReturn<StateType> = {
   setFieldErrors: Dispatch<SetStateAction<FieldErrors<StateType>>>;
   setFormError: Dispatch<SetStateAction<string | undefined>>;
   setFormState: Dispatch<SetStateAction<StateType>>;
-  setValue: (key: keyof StateType, value: StateType[typeof key]) => void;
+  setValue: (key: keyof StateType) => (value: StateType[typeof key]) => void;
   validate: () => boolean;
 };
 
@@ -164,17 +164,16 @@ export const useForm = <StateType extends Record<string, unknown>>(
     [clearFieldErrors, properties, validate],
   );
 
-  const setValue = useCallback(
-    (key: keyof StateType, value: StateType[typeof key]): void => {
+  const setValue = useCallback((key: keyof StateType) => {
+    return (value: StateType[typeof key]) => {
       setFormState(previousState => {
         return {
           ...previousState,
           [key]: value,
         };
       });
-    },
-    [],
-  );
+    };
+  }, []);
 
   return {
     clearFieldErrors,
