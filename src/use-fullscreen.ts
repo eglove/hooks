@@ -11,7 +11,7 @@ type UseFullscreenReturn = {
 };
 
 const closeFullScreen = (): void => {
-  document.exitFullscreen().catch((exitFullscreenError: Error) => {
+  document.exitFullscreen().catch((exitFullscreenError: unknown) => {
     // eslint-disable-next-line no-console
     console.error(exitFullscreenError);
   });
@@ -27,7 +27,7 @@ export const useFullscreen = (
   const openFullScreen = (): void => {
     reference.current
       .requestFullscreen()
-      .catch((requestFullscreenError: Error) => {
+      .catch((requestFullscreenError: unknown) => {
         // eslint-disable-next-line no-console
         console.error(requestFullscreenError);
       });

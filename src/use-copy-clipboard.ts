@@ -30,8 +30,10 @@ export const useCopyClipboard = (
       }
     };
 
-    asyncCopy().catch((asyncError: Error) => {
-      setError(asyncError);
+    asyncCopy().catch((asyncError: unknown) => {
+      if (asyncError instanceof Error) {
+        setError(asyncError);
+      }
       setIsCopied(false);
     });
   };
