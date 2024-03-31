@@ -12,17 +12,17 @@
     "build": "node build.mjs"
   },
   "peerDependencies": {
-    "@ethang/toolbelt": "^1.11.0",
     "react": "^18.2.0",
     "zod": "^3.22.4"
   },
   "dependencies": {
-    "@ethang/toolbelt": "^1.11.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@ethang/project-builder": "^1.1.28",
+    "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.2",
     "@types/react": "^18.2.73",
     "eslint-config-ethang": "^14.1.6",
