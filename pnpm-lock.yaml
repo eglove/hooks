@@ -18,7 +18,7 @@ dependencies:
 devDependencies:
   '@ethang/project-builder':
     specifier: ^1.1.31
-    version: 1.1.31(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.17)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5)
+    version: 1.1.31(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.18)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5)
   '@types/lodash':
     specifier: ^4.17.0
     version: 4.17.0
@@ -26,11 +26,11 @@ devDependencies:
     specifier: ^20.12.7
     version: 20.12.7
   '@types/react':
-    specifier: ^18.2.77
-    version: 18.2.77
+    specifier: ^18.2.78
+    version: 18.2.78
   eslint-config-ethang:
-    specifier: ^14.1.7
-    version: 14.1.7(@typescript-eslint/eslint-plugin@7.6.0)(@typescript-eslint/parser@7.6.0)(eslint-config-prettier@9.1.0)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.15.1)(eslint-plugin-typescript-sort-keys@3.2.0)(eslint-plugin-unicorn@51.0.1)(eslint-plugin-unused-imports@3.1.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5)
+    specifier: ^14.1.8
+    version: 14.1.8(@typescript-eslint/eslint-plugin@7.6.0)(@typescript-eslint/parser@7.6.0)(eslint-config-prettier@9.1.0)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.1.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.15.1)(eslint-plugin-typescript-sort-keys@3.2.0)(eslint-plugin-unicorn@51.0.1)(eslint-plugin-unused-imports@3.1.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5)
   rimraf:
     specifier: ^5.0.5
     version: 5.0.5
@@ -324,7 +324,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ethang/project-builder@1.1.31(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.17)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5):
+  /@ethang/project-builder@1.1.31(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.18)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5):
     resolution: {integrity: sha512-5VGCoezSzxTVQAJjTAXaoaN26hnL8dTzcIowkQeeDXACSRlG/MfQsEJBtRQHd49xTXmM0OZNhfOY9sVAI1xITg==}
     peerDependencies:
       '@ethang/util': ^3.1.1
@@ -337,7 +337,7 @@ packages:
     dependencies:
       '@ethang/util': 3.1.1
       chalk: 5.3.0
-      inquirer: 9.2.17
+      inquirer: 9.2.18
       rimraf: 5.0.5
       simple-git: 3.24.0
       tsup: 8.0.2(postcss@8.4.38)(typescript@5.4.5)
@@ -366,6 +366,11 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.3:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    dev: true
+
+  /@inquirer/figures@1.0.0:
+    resolution: {integrity: sha512-3fw+7+77/duTnMJTeSS44wneszghI4tkr0m0xdIJabbYRe36ElzmsqyboMZ1nFRon6sT+ckVvYDVjwapKv+2sw==}
+    engines: {node: '>=18'}
     dev: true
 
   /@isaacs/cliui@8.0.2:
@@ -582,8 +587,8 @@ packages:
     dev: true
     optional: true
 
-  /@rushstack/eslint-patch@1.10.1:
-    resolution: {integrity: sha512-S3Kq8e7LqxkA9s7HKLqXGTGck1uwis5vAXan3FnU5yw1Ec5hsSGnq4s/UCaSqABPOnOTg7zASLyst7+ohgWexg==}
+  /@rushstack/eslint-patch@1.10.2:
+    resolution: {integrity: sha512-hw437iINopmQuxWPSUEvqE56NCPsiU8N4AYtfHmJFckclktzK9YQJieD3XkDCDH4OjL+C7zgPUh73R/nrcHrqw==}
     dev: true
 
   /@types/estree@1.0.5:
@@ -616,8 +621,8 @@ packages:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
     dev: true
 
-  /@types/react@18.2.77:
-    resolution: {integrity: sha512-CUT9KUUF+HytDM7WiXKLF9qUSg4tGImwy4FXTlfEDPEkkNUzJ7rVFolYweJ9fS1ljoIaP7M7Rdjc5eUm/Yu5AA==}
+  /@types/react@18.2.78:
+    resolution: {integrity: sha512-qOwdPnnitQY4xKlKayt42q5W5UQrSHjgoXNVEtxeqdITJ99k4VXJOP3vt8Rkm9HmgJpH50UNU+rlqfkfWOqp0A==}
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
@@ -1108,7 +1113,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001609
-      electron-to-chromium: 1.4.735
+      electron-to-chromium: 1.4.736
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: true
@@ -1415,8 +1420,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.735:
-    resolution: {integrity: sha512-pkYpvwg8VyOTQAeBqZ7jsmpCjko1Qc6We1ZtZCjRyYbT5v4AIUKDy5cQTRotQlSSZmMr8jqpEt6JtOj5k7lR7A==}
+  /electron-to-chromium@1.4.736:
+    resolution: {integrity: sha512-Rer6wc3ynLelKNM4lOCg7/zPQj8tPOCB2hzD32PX9wd3hgRRi9MxEbmkFCokzcEhRVMiOVLjnL9ig9cefJ+6+Q==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -1594,8 +1599,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-ethang@14.1.7(@typescript-eslint/eslint-plugin@7.6.0)(@typescript-eslint/parser@7.6.0)(eslint-config-prettier@9.1.0)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.15.1)(eslint-plugin-typescript-sort-keys@3.2.0)(eslint-plugin-unicorn@51.0.1)(eslint-plugin-unused-imports@3.1.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5):
-    resolution: {integrity: sha512-dcv5rOTN5TvnUhYWFq4Iz9RkUlW+3OFnNKJjBmR5H4/1XOJ19x3IVrR2uU4gydATUEXlalklSRAmmfodlO3UJw==}
+  /eslint-config-ethang@14.1.8(@typescript-eslint/eslint-plugin@7.6.0)(@typescript-eslint/parser@7.6.0)(eslint-config-prettier@9.1.0)(eslint-plugin-import@2.29.1)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.1.3)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.34.1)(eslint-plugin-simple-import-sort@12.1.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.15.1)(eslint-plugin-typescript-sort-keys@3.2.0)(eslint-plugin-unicorn@51.0.1)(eslint-plugin-unused-imports@3.1.0)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.4.5):
+    resolution: {integrity: sha512-3HctCmfXf7IF3byaL2muLY+EVktKP7qDFZnR439/HWGIn9shCDXowGLHqZBXmEmgYvbrnU884NN2w1Be5ESN5Q==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^7.6.0
       '@typescript-eslint/parser': ^7.6.0
@@ -1606,16 +1611,16 @@ packages:
       eslint-plugin-prettier: ^5.1.3
       eslint-plugin-react: 7.34.1
       eslint-plugin-react-hooks: ^4.6.0
-      eslint-plugin-simple-import-sort: ^12.0.0
+      eslint-plugin-simple-import-sort: ^12.1.0
       eslint-plugin-sort-keys-fix: ^1.1.2
       eslint-plugin-tailwindcss: ^3.15.1
       eslint-plugin-typescript-sort-keys: ^3.2.0
       eslint-plugin-unicorn: ^51.0.1
       eslint-plugin-unused-imports: ^3.1.0
       prettier: ^3.2.5
-      typescript: ^5.4.4
+      typescript: ^5.4.5
     dependencies:
-      '@rushstack/eslint-patch': 1.10.1
+      '@rushstack/eslint-patch': 1.10.2
       '@typescript-eslint/eslint-plugin': 7.6.0(@typescript-eslint/parser@7.6.0)(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser': 7.6.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
@@ -1625,7 +1630,7 @@ packages:
       eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
       eslint-plugin-react: 7.34.1(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.57.0)
-      eslint-plugin-simple-import-sort: 12.0.0(eslint@8.57.0)
+      eslint-plugin-simple-import-sort: 12.1.0(eslint@8.57.0)
       eslint-plugin-sort-keys-fix: 1.1.2
       eslint-plugin-tailwindcss: 3.15.1(tailwindcss@3.4.3)
       eslint-plugin-typescript-sort-keys: 3.2.0(@typescript-eslint/parser@7.6.0)(eslint@8.57.0)(typescript@5.4.5)
@@ -1800,8 +1805,8 @@ packages:
       string.prototype.matchall: 4.0.11
     dev: true
 
-  /eslint-plugin-simple-import-sort@12.0.0(eslint@8.57.0):
-    resolution: {integrity: sha512-8o0dVEdAkYap0Cn5kNeklaKcT1nUsa3LITWEuFk3nJifOoD+5JQGoyDUW2W/iPWwBsNBJpyJS9y4je/BgxLcyQ==}
+  /eslint-plugin-simple-import-sort@12.1.0(eslint@8.57.0):
+    resolution: {integrity: sha512-Y2fqAfC11TcG/WP3TrI1Gi3p3nc8XJyEOJYHyEPEGI/UAgNx6akxxlX74p7SbAQdLcgASKhj8M0GKvH3vq/+ig==}
     peerDependencies:
       eslint: '>=5.0.0'
     dependencies:
@@ -2069,13 +2074,6 @@ packages:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
     dependencies:
       reusify: 1.0.4
-    dev: true
-
-  /figures@3.2.0:
-    resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
-    engines: {node: '>=8'}
-    dependencies:
-      escape-string-regexp: 1.0.5
     dev: true
 
   /file-entry-cache@6.0.1:
@@ -2361,17 +2359,17 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: true
 
-  /inquirer@9.2.17:
-    resolution: {integrity: sha512-Vr3Ia2ud5sGnioURkE69endl4SkeJcMzTF6SosKcX5GALJfId7C+JvO5ZZb6y1LOXnEofCPbwzoQ1q0e8Gaduw==}
+  /inquirer@9.2.18:
+    resolution: {integrity: sha512-Qzm+UP7L9beFyycZ9Nxzqj7WBgeJIaT4Ue0+2bmQp9yZXiUW2azrmBnp3vlInMw1wXkUmaM0hiMcht7CjJzASw==}
     engines: {node: '>=18'}
     dependencies:
+      '@inquirer/figures': 1.0.0
       '@ljharb/through': 2.3.13
       ansi-escapes: 4.3.2
       chalk: 5.3.0
       cli-cursor: 3.1.0
       cli-width: 4.1.0
       external-editor: 3.1.0
-      figures: 3.2.0
       lodash: 4.17.21
       mute-stream: 1.0.0
       ora: 5.4.1
