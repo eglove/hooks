@@ -1,7 +1,7 @@
 import { projectBuilder } from '@ethang/project-builder/project-builder.js';
 
 await projectBuilder('hooks', 'main', {
-  preVersionBumpScripts: ['UPDATE', 'PRUNE'],
+  preVersionBumpScripts: ['UPDATE'],
   postVersionBumpScripts: ['DEDUPE', 'LINT'],
   publishDirectory: 'dist',
   isLibrary: true,
