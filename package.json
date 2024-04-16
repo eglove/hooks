@@ -22,10 +22,11 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.34",
+    "@ethang/project-builder": "^1.1.35",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
+    "eslint": "8",
     "eslint-config-ethang": "^14.1.9",
     "react": "^18.2.0",
     "rimraf": "^5.0.5",
