@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const isBrowser = typeof window !== 'undefined';
+const isBrowser = typeof window !== "undefined";
 
 export const useWindowSize = (
   initialWidth = Number.POSITIVE_INFINITY,
@@ -20,10 +20,10 @@ export const useWindowSize = (
         });
       };
 
-      addEventListener('resize', handler);
+      addEventListener("resize", handler);
 
       return (): void => {
-        removeEventListener('resize', handler);
+        removeEventListener("resize", handler);
       };
     }
   }, []);

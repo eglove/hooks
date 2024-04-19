@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 type LocalStorageType<ValueType> = ValueType | string | undefined;
 
@@ -7,7 +7,7 @@ export const useLocalStorage = <ValueType>(
   defaultValue?: ValueType,
   deserialize = JSON.parse,
   serialize = JSON.stringify,
-  // eslint-disable-next-line @typescript-eslint/max-params
+  // eslint-disable-next-line max-params
 ): [LocalStorageType<ValueType>, (value: ValueType) => void, () => void] => {
   const [storedValue, setStoredValue] = useState<LocalStorageType<ValueType>>(
     () => {
@@ -30,7 +30,7 @@ export const useLocalStorage = <ValueType>(
   );
 
   const setValue = (value: ValueType): void => {
-    if (typeof value === 'string') {
+    if (typeof value === "string") {
       globalThis.localStorage.setItem(keyName, value);
     } else {
       try {

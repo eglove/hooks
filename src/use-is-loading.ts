@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 type UseIsLoadingReturn<T, E> = {
   caller: (() => void) | undefined;
@@ -7,9 +7,9 @@ type UseIsLoadingReturn<T, E> = {
   results: T | undefined;
 };
 
-export function useIsLoading<T, E>(
+export const useIsLoading = <T, E>(
   callback: () => Promise<T>,
-): UseIsLoadingReturn<T, E> {
+): UseIsLoadingReturn<T, E> => {
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<T>();
   const [error, setError] = useState<E>();
@@ -19,11 +19,11 @@ export function useIsLoading<T, E>(
     const callFunction = (): void => {
       setIsLoading(true);
       callback()
-        .then(result => {
+        .then((result) => {
           setResults(result);
         })
-        .catch((error: unknown) => {
-          setError(error as E);
+        .catch((error_: unknown) => {
+          setError(error_ as E);
         })
         .finally(() => {
           setIsLoading(false);
@@ -34,4 +34,4 @@ export function useIsLoading<T, E>(
   }, [callback]);
 
   return { caller, error, isLoading, results };
-}
+};

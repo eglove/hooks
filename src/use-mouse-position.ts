@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { useEventListener } from './use-event-listener.ts';
+import { useEventListener } from "./use-event-listener.ts";
 
 type MousePosition = {
   mouseX?: number;
@@ -17,7 +17,7 @@ export const useMousePosition = (): MousePosition => {
     setMousePosition({ mouseX: event.clientX, mouseY: event.clientY });
   };
 
-  useEventListener('mousemove', updateMousePosition);
+  useEventListener("mousemove", updateMousePosition);
 
   return mousePosition;
 };

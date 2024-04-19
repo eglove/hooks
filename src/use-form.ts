@@ -1,8 +1,8 @@
-import isNil from 'lodash/isNil.js';
-import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
-import { useCallback, useState } from 'react';
-import type { z } from 'zod';
-import { ZodError } from 'zod';
+import isNil from "lodash/isNil.js";
+import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
+import { useCallback, useState } from "react";
+import type { z } from "zod";
+import { ZodError } from "zod";
 
 export type FieldErrors<StateType> =
   | Record<keyof StateType, string[] | null | undefined>
@@ -45,7 +45,6 @@ const setAll = <ObjectType extends Record<string, unknown>, ValueType>(
   return fromEntries as unknown as ObjectType;
 };
 
-// eslint-disable-next-line max-lines-per-function,max-statements
 export const useForm = <StateType extends Record<string, unknown>>(
   initialState: StateType,
   properties?: UseFormProperties<StateType>,
@@ -54,7 +53,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
     const defaultState: Record<string, unknown> = {};
     for (const key of Object.keys(initialState)) {
       defaultState[key] =
-        initialState[key] === undefined ? '' : initialState[key];
+        initialState[key] === undefined ? "" : initialState[key];
     }
 
     return defaultState as StateType;
@@ -69,7 +68,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
   }, [fieldErrors]);
 
   const clearForm = useCallback((): void => {
-    setFormState(setAll(formState, ''));
+    setFormState(setAll(formState, ""));
   }, [formState]);
 
   const resetForm = useCallback((): void => {
@@ -77,7 +76,6 @@ export const useForm = <StateType extends Record<string, unknown>>(
   }, [initialState]);
 
   const handleChange = useCallback(
-    // eslint-disable-next-line max-statements
     (event: ChangeEvent): void => {
       const eventTarget = event.target as unknown as {
         checked?: boolean;
@@ -90,19 +88,19 @@ export const useForm = <StateType extends Record<string, unknown>>(
       let { value } = eventTarget;
       const { checked, name, type, files } = eventTarget;
 
-      if (type === 'checkbox' && checked !== undefined) {
+      if (type === "checkbox" && checked !== undefined) {
         value = checked;
       }
 
-      if (type === 'number' && typeof value === 'string') {
-        value = Number.parseFloat(value.replaceAll(',', ''));
+      if (type === "number" && typeof value === "string") {
+        value = Number.parseFloat(value.replaceAll(",", ""));
       }
 
-      if (type === 'file') {
+      if (type === "file") {
         [value] = files;
       }
 
-      setFormState(formState_ => {
+      setFormState((formState_) => {
         return {
           ...formState_,
           [name]: value,
@@ -131,7 +129,6 @@ export const useForm = <StateType extends Record<string, unknown>>(
   }, [formState, properties]);
 
   const handleSubmit = useCallback(
-    // eslint-disable-next-line max-statements
     (event: FormEvent): void => {
       event.preventDefault();
 
@@ -158,7 +155,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
 
       if (!hasException) {
         clearFieldErrors();
-        setFormError('');
+        setFormError("");
       }
     },
     [clearFieldErrors, properties, validate],
@@ -166,7 +163,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
 
   const setValue = useCallback((key: keyof StateType) => {
     return (value: StateType[typeof key]) => {
-      setFormState(previousState => {
+      setFormState((previousState) => {
         return {
           ...previousState,
           [key]: value,

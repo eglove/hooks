@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export function useSet<SetType>(
-  values?: SetType[] | null | undefined,
-): Set<SetType> {
+export const useSet = <SetType>(
+  values?: Readonly<SetType[] | null | undefined>,
+): Set<SetType> => {
   const [set, setSet] = useState(new Set(values));
 
   set.add = (value: SetType): Set<SetType> => {
@@ -31,4 +31,4 @@ export function useSet<SetType>(
   };
 
   return set;
-}
+};

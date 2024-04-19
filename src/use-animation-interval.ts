@@ -1,13 +1,13 @@
-import isNil from 'lodash/isNil.js';
-import { useEffect } from 'react';
+import isNil from "lodash/isNil.js";
+import { useEffect } from "react";
 
 export type IntervalCallback = (time: number | undefined) => void;
 
-export function animationInterval(
+export const animationInterval = (
   ms: number,
   signal: AbortSignal,
   callback: IntervalCallback,
-): void {
+): void => {
   const start = isNil(document.timeline)
     ? performance.now()
     : document.timeline.currentTime;
@@ -37,7 +37,7 @@ export function animationInterval(
   };
 
   scheduleFrame(startNumber);
-}
+};
 
 export const useAnimationInterval = (
   ms: number,

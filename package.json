@@ -8,7 +8,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint": "eslint . --fix",
+    "lint": "eslint src/ --fix",
     "build": "node build.mjs"
   },
   "peerDependencies": {
@@ -19,17 +19,19 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "zod": "^3.22.4"
+    "zod": "^3.22.5"
   },
   "devDependencies": {
+    "@ethang/eslint-config": "^15.0.13",
     "@ethang/project-builder": "^1.1.35",
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
-    "eslint": "8",
-    "eslint-config-ethang": "^14.1.9",
+    "eslint": "^9.0.0",
     "react": "^18.2.0",
     "rimraf": "^5.0.5",
-    "typescript": "^5.4.5"
+    "type-fest": "^4.15.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
   }
 }

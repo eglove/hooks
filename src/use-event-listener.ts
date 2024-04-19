@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 type WindowEventMapPlus = Record<string, unknown> & WindowEventMap;
 
@@ -13,7 +13,7 @@ export const useEventListener = <Type extends keyof WindowEventMapPlus>(
     const controller = new AbortController();
     const { signal } = controller;
 
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       return;
     }
 

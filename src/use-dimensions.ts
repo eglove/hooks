@@ -1,6 +1,6 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from "react";
 
-import { animationInterval } from './use-animation-interval.ts';
+import { animationInterval } from "./use-animation-interval.ts";
 
 type UseDiemensionsProperties = {
   delay?: number;
@@ -17,7 +17,6 @@ type UseDimensionsReturn = {
 
 const DEFAULT_DELAY = 250;
 
-// eslint-disable-next-line max-lines-per-function
 export const useDimensions = ({
   liveMeasure = true,
   delay = DEFAULT_DELAY,
@@ -53,18 +52,15 @@ export const useDimensions = ({
     measure();
 
     if (liveMeasure) {
-      addEventListener('resize', measure);
-      addEventListener('scroll', measure);
+      addEventListener("resize", measure);
+      addEventListener("scroll", measure);
 
       return (): void => {
-        removeEventListener('resize', measure);
-        removeEventListener('scroll', measure);
+        removeEventListener("resize", measure);
+        removeEventListener("scroll", measure);
         controller.abort();
       };
     }
-
-    // Assume this hook is used correctly
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [element, liveMeasure, ...effectDeps]);
 
   return { dimensions, element, reference };
