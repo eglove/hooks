@@ -13,7 +13,7 @@ export const useEventListener = <Type extends keyof WindowEventMapPlus>(
     const controller = new AbortController();
     const { signal } = controller;
 
-    if (typeof window === "undefined") {
+    if ("undefined" === typeof window) {
       return;
     }
 

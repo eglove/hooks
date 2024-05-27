@@ -7,13 +7,13 @@ export const useLocalStorage = <ValueType>(
   defaultValue?: ValueType,
   deserialize = JSON.parse,
   serialize = JSON.stringify,
-  // eslint-disable-next-line max-params
+  // eslint-disable-next-line @typescript-eslint/max-params
 ): [LocalStorageType<ValueType>, (value: ValueType) => void, () => void] => {
   const [storedValue, setStoredValue] = useState<LocalStorageType<ValueType>>(
     () => {
       const value = globalThis.localStorage.getItem(keyName);
 
-      if (value !== null) {
+      if (null !== value) {
         try {
           return deserialize(value) as ValueType;
         } catch {
@@ -30,7 +30,7 @@ export const useLocalStorage = <ValueType>(
   );
 
   const setValue = (value: ValueType): void => {
-    if (typeof value === "string") {
+    if ("string" === typeof value) {
       globalThis.localStorage.setItem(keyName, value);
     } else {
       try {

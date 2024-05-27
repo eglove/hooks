@@ -88,15 +88,15 @@ export const useForm = <StateType extends Record<string, unknown>>(
       let { value } = eventTarget;
       const { checked, name, type, files } = eventTarget;
 
-      if (type === "checkbox" && checked !== undefined) {
+      if ("checkbox" === type && checked !== undefined) {
         value = checked;
       }
 
-      if (type === "number" && typeof value === "string") {
+      if ("number" === type && "string" === typeof value) {
         value = Number.parseFloat(value.replaceAll(",", ""));
       }
 
-      if (type === "file") {
+      if ("file" === type) {
         [value] = files;
       }
 

@@ -13,7 +13,7 @@ export const animationInterval = (
     : document.timeline.currentTime;
 
   const DEFAULT_START = 0;
-  const startNumber = start === null ? DEFAULT_START : Number(start);
+  const startNumber = null === start ? DEFAULT_START : Number(start);
 
   const frame = (time: number): void => {
     if (signal.aborted) {
