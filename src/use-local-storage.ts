@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type LocalStorageType<ValueType> = ValueType | string | undefined;
+type LocalStorageType<ValueType> = string | undefined | ValueType;
 
 export const useLocalStorage = <ValueType>(
   keyName: string,

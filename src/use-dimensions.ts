@@ -18,10 +18,10 @@ type UseDimensionsReturn = {
 const DEFAULT_DELAY = 250;
 
 export const useDimensions = ({
-  liveMeasure = true,
   delay = DEFAULT_DELAY,
-  initialDimensions = {},
   effectDeps = [],
+  initialDimensions = {},
+  liveMeasure = true,
 }: UseDiemensionsProperties): UseDimensionsReturn => {
   const [dimensions, setDimensions] = useState<
     DOMRect | Record<string, unknown>

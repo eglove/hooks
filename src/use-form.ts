@@ -1,11 +1,12 @@
-import isNil from "lodash/isNil.js";
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
-import { useCallback, useState } from "react";
 import type { z } from "zod";
+
+import isNil from "lodash/isNil.js";
+import { useCallback, useState } from "react";
 import { ZodError } from "zod";
 
 export type FieldErrors<StateType> =
-  | Record<keyof StateType, string[] | null | undefined>
+  | Record<keyof StateType, null | string[] | undefined>
   | undefined;
 
 export type UseFormProperties<StateType> = {
@@ -82,11 +83,11 @@ export const useForm = <StateType extends Record<string, unknown>>(
         files: File[];
         name: string;
         type: string;
-        value: File | boolean | number | string;
+        value: boolean | File | number | string;
       };
 
       let { value } = eventTarget;
-      const { checked, name, type, files } = eventTarget;
+      const { checked, files, name, type } = eventTarget;
 
       if ("checkbox" === type && checked !== undefined) {
         value = checked;

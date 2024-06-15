@@ -1,4 +1,5 @@
 import type { MutableRefObject } from "react";
+
 import { useState } from "react";
 
 import { useEventListener } from "./use-event-listener.ts";
