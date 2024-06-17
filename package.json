@@ -33,7 +33,7 @@
     "eslint": "^9.5.0",
     "react": "^18.2.0",
     "rimraf": "^5.0.7",
-    "type-fest": "^4.20.0",
+    "type-fest": "^4.20.1",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.13.0"
   }
