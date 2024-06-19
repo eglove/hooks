@@ -1,51 +1,64 @@
-import { useState } from "react";
+import isNil from "lodash/isNil.js";
+import { useSyncExternalStore } from "react";
 
-type LocalStorageType<ValueType> = string | undefined | ValueType;
+type ListenerParameters = Parameters<typeof addEventListener>;
+type ListenerOptions = AddEventListenerOptions | EventListenerOptions;
 
-export const useLocalStorage = <ValueType>(
-  keyName: string,
-  defaultValue?: ValueType,
-  deserialize = JSON.parse,
-  serialize = JSON.stringify,
-  // eslint-disable-next-line @typescript-eslint/max-params
-): [LocalStorageType<ValueType>, (value: ValueType) => void, () => void] => {
-  const [storedValue, setStoredValue] = useState<LocalStorageType<ValueType>>(
-    () => {
-      const value = globalThis.localStorage.getItem(keyName);
-
-      if (null !== value) {
-        try {
-          return deserialize(value) as ValueType;
-        } catch {
-          return value;
-        }
-      }
-
-      if (defaultValue !== undefined) {
-        globalThis.localStorage.setItem(keyName, serialize(defaultValue));
-      }
-
-      return defaultValue;
-    },
-  );
-
-  const setValue = (value: ValueType): void => {
-    if ("string" === typeof value) {
-      globalThis.localStorage.setItem(keyName, value);
-    } else {
-      try {
-        globalThis.localStorage.setItem(keyName, serialize(value));
-      } catch {
-        throw new Error(`Failed to set ${keyName} in local storage.`);
-      }
-    }
-
-    setStoredValue(value);
-  };
-
-  const removeValue = (): void => {
-    globalThis.localStorage.removeItem(keyName);
-  };
-
-  return [storedValue, setValue, removeValue];
+type LocalStorageStoreOptions = {
+  defaultValue?: string;
+  listenerOptions?: ListenerOptions;
 };
+
+function localStorageStore(key: string, options?: LocalStorageStoreOptions) {
+  return {
+    event: new Event(`useLocalStorage-${key}`),
+    getServerSnapshot: () => {
+      return options?.defaultValue ?? null;
+    },
+    getSnapshot: () => {
+      return localStorage.getItem(key);
+    },
+    subscribe: (listener: ListenerParameters[1]) => {
+      const controller = new AbortController();
+      const { signal } = controller;
+
+      addEventListener(`useLocalStorage-${key}`, listener, {
+        signal,
+        ...options?.listenerOptions,
+      });
+
+      return () => {
+        controller.abort();
+      };
+    },
+  };
+}
+
+type UseLocalStorageProperties = {
+  defaultValue?: string;
+  listenerOptions?: ListenerOptions;
+};
+
+export function useLocalStorage(
+  key: string,
+  options?: UseLocalStorageProperties,
+) {
+  const { event, getServerSnapshot, getSnapshot, subscribe } =
+    localStorageStore(key, {
+      defaultValue: options?.defaultValue,
+      listenerOptions: options?.listenerOptions,
+    });
+
+  const value = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
+  const setValue = (newValue: string) => {
+    localStorage.setItem(key, newValue);
+    dispatchEvent(event);
+  };
+
+  if (null === value && !isNil(options?.defaultValue)) {
+    setValue(options.defaultValue);
+  }
+
+  return [value, setValue] as const;
+}
