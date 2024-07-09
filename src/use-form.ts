@@ -33,9 +33,9 @@ export type UseFormReturn<StateType> = {
   validate: () => boolean;
 };
 
-const setAll = <ObjectType extends Record<string, unknown>, ValueType>(
+const setAll = <ObjectType extends Record<string, unknown>>(
   object: ObjectType,
-  value?: ValueType,
+  value?: unknown,
 ): ObjectType => {
   const fromEntries = Object.fromEntries(
     Object.entries(object).map(([key]) => {
