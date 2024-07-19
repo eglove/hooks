@@ -26,14 +26,14 @@
   },
   "devDependencies": {
     "@ethang/eslint-config": "^17.1.6",
-    "@ethang/project-builder": "^1.1.44",
+    "@ethang/project-builder": "^1.1.45",
     "@types/lodash": "^4.17.7",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "eslint": "^9.7.0",
+    "eslint-plugin-sonarjs": "1.0.3",
     "react": "^18.2.0",
     "rimraf": "^6.0.1",
-    "eslint-plugin-sonarjs": "1.0.3",
     "type-fest": "^4.22.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^7.16.1"
