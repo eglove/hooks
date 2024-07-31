@@ -25,16 +25,16 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^17.5.2",
-    "@ethang/project-builder": "^1.1.50",
+    "@ethang/eslint-config": "^17.6.0",
+    "@ethang/project-builder": "^1.1.51",
     "@types/lodash": "^4.17.7",
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.0.2",
     "@types/react": "^18.3.3",
     "eslint": "^9.8.0",
     "react": "^18.2.0",
     "rimraf": "^6.0.1",
     "type-fest": "^4.23.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^7.18.0"
+    "typescript-eslint": "^8.0.0"
   }
 }
