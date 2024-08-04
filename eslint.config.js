@@ -1,8 +1,8 @@
 import config from "@ethang/eslint-config/eslint.config.js";
 import tseslint from "typescript-eslint";
+import configReact from "@ethang/eslint-config-react";
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-export default tseslint.config(...config, {
+export default tseslint.config(...config, ...config, {
   languageOptions: {
     parserOptions: {
       project: true,
