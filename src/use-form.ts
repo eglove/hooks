@@ -1,7 +1,12 @@
 import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import type { z } from "zod";
 
+import entries from "lodash/entries.js";
+import isError from "lodash/isError.js";
 import isNil from "lodash/isNil.js";
+import isString from "lodash/isString.js";
+import keys from "lodash/keys.js";
+import map from "lodash/map.js";
 import { useCallback, useState } from "react";
 import { ZodError } from "zod";
 
@@ -38,7 +43,7 @@ const setAll = <ObjectType extends Record<string, unknown>>(
   value?: unknown,
 ): ObjectType => {
   const fromEntries = Object.fromEntries(
-    Object.entries(object).map(([key]) => {
+    map(entries(object), ([key]) => {
       return [key, value];
     }),
   );
@@ -52,7 +57,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
 ): UseFormReturn<StateType> => {
   const [formState, setFormState] = useState(() => {
     const defaultState: Record<string, unknown> = {};
-    for (const key of Object.keys(initialState)) {
+    for (const key of keys(initialState)) {
       defaultState[key] =
         initialState[key] === undefined ? "" : initialState[key];
     }
@@ -93,7 +98,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
         value = checked;
       }
 
-      if ("number" === type && "string" === typeof value) {
+      if ("number" === type && isString(value)) {
         value = Number.parseFloat(value.replaceAll(",", ""));
       }
 
@@ -149,7 +154,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
         hasException = true;
         properties.onError?.(error);
 
-        if (error instanceof Error) {
+        if (isError(error)) {
           setFormError(error.message);
         }
       }

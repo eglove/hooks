@@ -1,3 +1,4 @@
+import isError from "lodash/isError.js";
 import { useEffect, useState } from "react";
 
 import { animationInterval } from "./use-animation-interval.ts";
@@ -22,7 +23,7 @@ export const useCopyClipboard = (
         await navigator.clipboard.writeText(text);
         setIsCopied(true);
       } catch (writeTextError: unknown) {
-        if (error instanceof Error) {
+        if (isError(error)) {
           setError(writeTextError as Error);
         }
 
@@ -31,7 +32,7 @@ export const useCopyClipboard = (
     };
 
     asyncCopy().catch((asyncError: unknown) => {
-      if (asyncError instanceof Error) {
+      if (isError(asyncError)) {
         setError(asyncError);
       }
       setIsCopied(false);
