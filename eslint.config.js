@@ -2,7 +2,7 @@ import config from "@ethang/eslint-config/eslint.config.js";
 import tseslint from "typescript-eslint";
 import configReact from "@ethang/eslint-config-react";
 
-export default tseslint.config(...config, ...config, {
+export default tseslint.config(...config, ...configReact, {
   languageOptions: {
     parserOptions: {
       project: true,
