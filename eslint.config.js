@@ -1,6 +1,6 @@
 import config from "@ethang/eslint-config/eslint.config.js";
+import configReact from "@ethang/eslint-config/config.react.js";
 import tseslint from "typescript-eslint";
-import configReact from "@ethang/eslint-config-react";
 
 export default tseslint.config(...config, ...configReact, {
   languageOptions: {
