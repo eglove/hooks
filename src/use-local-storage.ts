@@ -9,7 +9,7 @@ type LocalStorageStoreOptions = {
   listenerOptions?: ListenerOptions;
 };
 
-function localStorageStore (key: string, options?: LocalStorageStoreOptions) {
+function localStorageStore(key: string, options?: LocalStorageStoreOptions) {
   return {
     event: new Event(`useLocalStorage-${key}`),
     getServerSnapshot: () => {
@@ -39,7 +39,7 @@ type UseLocalStorageProperties = {
   listenerOptions?: ListenerOptions;
 };
 
-export function useLocalStorage (
+export function useLocalStorage(
   key: string,
   options?: UseLocalStorageProperties,
 ) {
