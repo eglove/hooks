@@ -59,7 +59,9 @@ export const useForm = <StateType extends Record<string, unknown>>(
     const defaultState: Record<string, unknown> = {};
     for (const key of keys(initialState)) {
       defaultState[key] =
-        initialState[key] === undefined ? "" : initialState[key];
+        initialState[key] === undefined
+          ? ""
+          : initialState[key];
     }
 
     return defaultState as StateType;
@@ -123,8 +125,8 @@ export const useForm = <StateType extends Record<string, unknown>>(
       const result = properties.zodValidator.safeParse(formState);
 
       if (!result.success && result.error instanceof ZodError) {
-        const errors = result.error.formErrors
-          .fieldErrors as typeof fieldErrors;
+        const errors = (result
+          .error.formErrors.fieldErrors) as typeof fieldErrors;
         setFieldErrors(errors);
         properties.onFieldError?.(errors);
         return false;

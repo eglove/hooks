@@ -17,5 +17,11 @@ export const useBoolean = (initialValue?: boolean) => {
     });
   }, []);
 
-  return { setFalse, setTrue, setValue, toggle, value };
+  return {
+    setFalse,
+    setTrue,
+    setValue,
+    toggle,
+    value,
+  };
 };

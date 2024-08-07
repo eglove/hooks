@@ -14,7 +14,10 @@ export const useMousePosition = (): MousePosition => {
   });
 
   const updateMousePosition = (event: MouseEvent): void => {
-    setMousePosition({ mouseX: event.clientX, mouseY: event.clientY });
+    setMousePosition({
+      mouseX: event.clientX,
+      mouseY: event.clientY,
+    });
   };
 
   useEventListener("mousemove", updateMousePosition);

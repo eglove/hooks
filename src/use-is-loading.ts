@@ -33,5 +33,10 @@ export const useIsLoading = <T, E>(
     setCaller(callFunction);
   }, [callback]);
 
-  return { caller, error, isLoading, results };
+  return {
+    caller,
+    error,
+    isLoading,
+    results,
+  };
 };

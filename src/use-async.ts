@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useAsync<T, E>(callback: () => Promise<T>) {
+export function useAsync<T, E> (callback: () => Promise<T>) {
   const [result, setResult] = useState<T>();
   const [error, setError] = useState<E>();
   const [isLoading, setIsLoading] = useState(false);
@@ -19,5 +19,9 @@ export function useAsync<T, E>(callback: () => Promise<T>) {
       });
   }, []);
 
-  return { error, isLoading, result };
+  return {
+    error,
+    isLoading,
+    result,
+  };
 }

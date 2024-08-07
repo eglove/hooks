@@ -5,10 +5,20 @@ const isBrowser = "undefined" !== typeof window;
 export const useWindowSize = (
   initialWidth = Number.POSITIVE_INFINITY,
   initialHeight = Number.POSITIVE_INFINITY,
-): { height: number; width: number } => {
-  const [state, setState] = useState<{ height: number; width: number }>({
-    height: isBrowser ? window.innerHeight : initialHeight,
-    width: isBrowser ? window.innerWidth : initialWidth,
+): {
+  height: number;
+  width: number;
+} => {
+  const [state, setState] = useState<{
+    height: number;
+    width: number;
+  }>({
+    height: isBrowser
+      ? window.innerHeight
+      : initialHeight,
+    width: isBrowser
+      ? window.innerWidth
+      : initialWidth,
   });
 
   useEffect((): (() => void) | undefined => {

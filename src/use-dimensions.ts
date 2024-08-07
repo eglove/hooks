@@ -63,5 +63,9 @@ export const useDimensions = ({
     }
   }, [element, liveMeasure, ...effectDeps]);
 
-  return { dimensions, element, reference };
+  return {
+    dimensions,
+    element,
+    reference,
+  };
 };
