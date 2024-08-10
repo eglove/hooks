@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@ethang/eslint-config": "^18.4.10",
-    "@ethang/project-builder": "^2.3.6",
+    "@ethang/project-builder": "^2.3.9",
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.2.0",
     "@types/react": "^18.3.3",
