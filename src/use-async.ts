@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
 export function useAsync<T, E>(callback: () => Promise<T>) {
   const [result, setResult] = useState<T>();
   const [error, setError] = useState<E>();
