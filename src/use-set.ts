@@ -6,28 +6,28 @@ export const useSet = <SetType>(
   const [set, setSet] = useState(new Set(values));
 
   set.add = (value: SetType): Set<SetType> => {
-    const set_ = new Set(set);
-    const returnValue = set_.add(value);
+    const _set = new Set(set);
+    const returnValue = _set.add(value);
 
-    setSet(set_);
+    setSet(_set);
 
     return returnValue;
   };
 
   set.delete = (value: SetType): boolean => {
-    const set_ = new Set(set);
-    const returnValue = set_.delete(value);
+    const _set = new Set(set);
+    const returnValue = _set.delete(value);
 
-    setSet(set_);
+    setSet(_set);
 
     return returnValue;
   };
 
   set.clear = (): void => {
-    const set_ = new Set(set);
-    set_.clear();
+    const _set = new Set(set);
+    _set.clear();
 
-    setSet(set_);
+    setSet(_set);
   };
 
   return set;

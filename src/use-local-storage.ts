@@ -9,7 +9,7 @@ type LocalStorageStoreOptions = {
   listenerOptions?: ListenerOptions;
 };
 
-function localStorageStore(key: string, options?: LocalStorageStoreOptions) {
+const localStorageStore = (key: string, options?: LocalStorageStoreOptions) => {
   return {
     event: new Event(`useLocalStorage-${key}`),
     getServerSnapshot: () => {
@@ -32,17 +32,17 @@ function localStorageStore(key: string, options?: LocalStorageStoreOptions) {
       };
     },
   };
-}
+};
 
 type UseLocalStorageProperties = {
   defaultValue?: string;
   listenerOptions?: ListenerOptions;
 };
 
-export function useLocalStorage(
+export const useLocalStorage = (
   key: string,
   options?: UseLocalStorageProperties,
-) {
+) => {
   const { event, getServerSnapshot, getSnapshot, subscribe } =
     localStorageStore(key, {
       defaultValue: options?.defaultValue,
@@ -61,4 +61,4 @@ export function useLocalStorage(
   }
 
   return [value, setValue] as const;
-}
+};

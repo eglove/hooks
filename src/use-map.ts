@@ -6,26 +6,26 @@ export const useMap = <T, U>(
   const [map, setMap] = useState(new Map(values));
 
   map.set = (key: T, value: U): Map<T, U> => {
-    const map_ = new Map(map);
-    const returnValue = map_.set(key, value);
+    const _map = new Map(map);
+    const returnValue = _map.set(key, value);
 
-    setMap(map_);
+    setMap(_map);
     return returnValue;
   };
 
   map.delete = (key: T): boolean => {
-    const map_ = new Map(map);
-    const returnValue = map_.delete(key);
+    const _map = new Map(map);
+    const returnValue = _map.delete(key);
 
-    setMap(map_);
+    setMap(_map);
     return returnValue;
   };
 
   map.clear = (): void => {
-    const map_ = new Map(map);
-    map_.clear();
+    const _map = new Map(map);
+    _map.clear();
 
-    setMap(map_);
+    setMap(_map);
   };
 
   return map;

@@ -22,8 +22,8 @@ export const useIsLoading = <T, E>(
         .then((result) => {
           setResults(result);
         })
-        .catch((error_: unknown) => {
-          setError(error_ as E);
+        .catch((_error: unknown) => {
+          setError(_error as E);
         })
         .finally(() => {
           setIsLoading(false);

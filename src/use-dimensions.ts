@@ -43,6 +43,7 @@ export const useDimensions = ({
       requestAnimationFrame(() => {
         const boundingRect = element.getBoundingClientRect();
 
+        // eslint-disable-next-line sonar/no-nested-functions
         animationInterval(delay, controller.signal, () => {
           setDimensions(boundingRect);
         });

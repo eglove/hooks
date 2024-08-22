@@ -6,8 +6,8 @@ export const useToggle = (initialState = false): UseToggleReturn => {
   const [value, setValue] = useState(initialState);
 
   const handleToggle = (): void => {
-    setValue((value_) => {
-      return !value_;
+    setValue((_value) => {
+      return !_value;
     });
   };
 

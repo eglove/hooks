@@ -108,9 +108,9 @@ export const useForm = <StateType extends Record<string, unknown>>(
         [value] = files;
       }
 
-      setFormState((formState_) => {
+      setFormState((_formState) => {
         return {
-          ...formState_,
+          ..._formState,
           [name]: value,
         };
       });
