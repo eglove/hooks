@@ -29,12 +29,12 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.0.7",
+    "@ethang/eslint-config": "^19.0.9",
     "@ethang/project-builder": "^2.3.10",
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.5.0",
     "@types/react": "^18.3.4",
-    "eslint": "^9.9.0",
+    "eslint": "^9.9.1",
     "react": "^18.2.0",
     "rimraf": "^6.0.1",
     "type-fest": "^4.25.0",
