@@ -19,11 +19,11 @@ importers:
         version: 3.23.8
     devDependencies:
       '@ethang/eslint-config':
-        specifier: ^19.2.7
-        version: 19.2.7(esn2um6v5a67rsb6nkdipeszja)
+        specifier: ^19.2.8
+        version: 19.2.8(kekupsimltiehtz5c2t2o54him)
       '@ethang/project-builder':
-        specifier: ^2.5.1
-        version: 2.5.1(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)
+        specifier: ^2.5.8
+        version: 2.5.8(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.42)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)
       '@types/lodash':
         specifier: ^4.17.7
         version: 4.17.7
@@ -915,14 +915,15 @@ packages:
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ethang/eslint-config@19.2.7':
-    resolution: {integrity: sha512-QEbG6IimgJpxuREzpopogBHehQXw4Yi8ANGMeKEbSpvpNcP3t+jgxcq27XPZEesIGFAKsUMkgwWU4J8NVwpgXg==}
+  '@ethang/eslint-config@19.2.8':
+    resolution: {integrity: sha512-UTzakGFFAhfM2tZCIYY+rJ/RrbdmvW1+ku4y89hhSyCha7eqKVPv18XUxhTBJ60p+x7+ELgosgzwaDVZMKSNDg==}
     engines: {node: '>=20'}
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.12.4
       '@eslint/js': ^9.9.1
       '@eslint/json': ^0.4.0
       '@eslint/markdown': ^6.0.0
+      '@ethang/eslint-plugin': ^0.0.6
       '@stylistic/eslint-plugin': ^2.7.2
       '@tanstack/eslint-plugin-query': ^5.53.0
       '@typescript-eslint/parser': ^8.3.0
@@ -936,15 +937,21 @@ packages:
       eslint-plugin-n: ^17.10.2
       eslint-plugin-perfectionist: ^3.3.0
       eslint-plugin-react-hooks: ^4.6.2
-      eslint-plugin-solid: ^0.14.2
+      eslint-plugin-solid: ^0.14.3
       eslint-plugin-sonarjs: 2.0.2
       eslint-plugin-tailwindcss: ^3.17.4
       eslint-plugin-unicorn: ^55.0.0
       typescript: ^5.5.4
       typescript-eslint: ^8.3.0
 
-  '@ethang/project-builder@2.5.1':
-    resolution: {integrity: sha512-Ur1xFIS9o16vhGsmbnQBSPLttctrdHMSSNoo5Pr9vYJc4BVShyPeAA6zhGuv6fGjYriC8b2jWajqiTYXqzOqQQ==}
+  '@ethang/eslint-plugin@0.0.6':
+    resolution: {integrity: sha512-Ve8AXWQJhw2zpWJfkUmJ5ouXRDgdLGkSFTPzXaUZzNqVVIMw2LmneQn11yhEJRsud/Fl/nLvi/TnrtKphvGW/A==}
+    peerDependencies:
+      '@typescript-eslint/utils': ^8.3.0
+      lodash: ^4.17.21
+
+  '@ethang/project-builder@2.5.8':
+    resolution: {integrity: sha512-WiAw5JJUUXRSrNDzSTJ1mHAq55QajG+VFhO/yZtWFPRo3Ab8scEZid6gVsmz7ETwH0nT5NkMXkEVkKaZ4YC4jQ==}
     peerDependencies:
       chalk: ^5.3.0
       fs-extra: ^11.2.0
@@ -2089,9 +2096,9 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-solid@0.14.2:
-    resolution: {integrity: sha512-uyX+/ONsM0IoVBV9EBv7uAhhFXqTfAGd3lxUCNfC+XmJazme1f4UAPhPNbqSfqnzaCbXwB1rsD/9ZpAgO6mzew==}
-    engines: {node: '>=12.0.0'}
+  eslint-plugin-solid@0.14.3:
+    resolution: {integrity: sha512-eDeyPrijSjVGeyb4oKoyidgLlMDZwAg/YdxiY9QvGXl2kLgpcHvLpgpaGK4KJ8xSsg0ym3B2dPRBAIlT7iUrEQ==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
 
@@ -3069,8 +3076,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.4.41:
-    resolution: {integrity: sha512-TesUflQ0WKZqAvg52PWL6kHgLKP6xB6heTOdoYM0Wt2UHyxNa4K25EZZMgKns3BH1RLVbZCREPpLY0rhnNoHVQ==}
+  postcss@8.4.42:
+    resolution: {integrity: sha512-hywKUQB9Ra4dR1mGhldy5Aj1X3MWDSIA1cEi+Uy0CjheLvP6Ual5RlwMCh8i/X121yEDLDIKBsrCQ8ba3FDMfQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -4715,12 +4722,13 @@ snapshots:
 
   '@eslint/object-schema@2.1.4': {}
 
-  '@ethang/eslint-config@19.2.7(esn2um6v5a67rsb6nkdipeszja)':
+  '@ethang/eslint-config@19.2.8(kekupsimltiehtz5c2t2o54him)':
     dependencies:
       '@eslint-react/eslint-plugin': 1.12.4(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@eslint/js': 9.9.1
       '@eslint/json': 0.4.0(eslint@9.9.1(jiti@1.21.6))
       '@eslint/markdown': 6.0.0(eslint@9.9.1(jiti@1.21.6))
+      '@ethang/eslint-plugin': 0.0.6(@typescript-eslint/utils@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(lodash@4.17.21)
       '@stylistic/eslint-plugin': 2.7.2(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@tanstack/eslint-plugin-query': 5.53.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@typescript-eslint/parser': 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
@@ -4734,21 +4742,26 @@ snapshots:
       eslint-plugin-n: 17.10.2(eslint@9.9.1(jiti@1.21.6))
       eslint-plugin-perfectionist: 3.3.0(astro-eslint-parser@1.0.2(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@9.9.1(jiti@1.21.6)))
       eslint-plugin-react-hooks: 4.6.2(eslint@9.9.1(jiti@1.21.6))
-      eslint-plugin-solid: 0.14.2(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
+      eslint-plugin-solid: 0.14.3(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       eslint-plugin-sonarjs: 2.0.2(@typescript-eslint/parser@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.1(jiti@1.21.6))
       eslint-plugin-tailwindcss: 3.17.4(tailwindcss@3.4.10)
       eslint-plugin-unicorn: 55.0.0(eslint@9.9.1(jiti@1.21.6))
       typescript: 5.5.4
       typescript-eslint: 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
 
-  '@ethang/project-builder@2.5.1(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)':
+  '@ethang/eslint-plugin@0.0.6(@typescript-eslint/utils@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(lodash@4.17.21)':
+    dependencies:
+      '@typescript-eslint/utils': 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
+      lodash: 4.17.21
+
+  '@ethang/project-builder@2.5.8(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.42)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)':
     dependencies:
       chalk: 5.3.0
       fs-extra: 11.2.0
       inquirer: 10.1.8
       lodash: 4.17.21
       simple-git: 3.25.0
-      tsup: 8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0)
+      tsup: 8.2.4(jiti@1.21.6)(postcss@8.4.42)(typescript@5.5.4)(yaml@2.5.0)
       typescript: 5.5.4
 
   '@humanwhocodes/module-importer@1.0.1': {}
@@ -5891,7 +5904,7 @@ snapshots:
       eslint: 9.9.1(jiti@1.21.6)
       eslint-compat-utils: 0.5.1(eslint@9.9.1(jiti@1.21.6))
       globals: 15.9.0
-      postcss: 8.4.41
+      postcss: 8.4.42
       postcss-selector-parser: 6.1.2
     transitivePeerDependencies:
       - supports-color
@@ -6157,7 +6170,7 @@ snapshots:
       string.prototype.matchall: 4.0.11
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-solid@0.14.2(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4):
+  eslint-plugin-solid@0.14.3(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4):
     dependencies:
       '@typescript-eslint/utils': 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       eslint: 9.9.1(jiti@1.21.6)
@@ -6205,7 +6218,7 @@ snapshots:
   eslint-plugin-tailwindcss@3.17.4(tailwindcss@3.4.10):
     dependencies:
       fast-glob: 3.3.2
-      postcss: 8.4.41
+      postcss: 8.4.42
       tailwindcss: 3.4.10
 
   eslint-plugin-unicorn@55.0.0(eslint@9.9.1(jiti@1.21.6)):
@@ -7304,36 +7317,36 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.41):
+  postcss-import@15.1.0(postcss@8.4.42):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.42
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.41):
+  postcss-js@4.0.1(postcss@8.4.42):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.41
+      postcss: 8.4.42
 
-  postcss-load-config@4.0.2(postcss@8.4.41):
+  postcss-load-config@4.0.2(postcss@8.4.42):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.0
     optionalDependencies:
-      postcss: 8.4.41
+      postcss: 8.4.42
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.41)(yaml@2.5.0):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.42)(yaml@2.5.0):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.6
-      postcss: 8.4.41
+      postcss: 8.4.42
       yaml: 2.5.0
 
-  postcss-nested@6.2.0(postcss@8.4.41):
+  postcss-nested@6.2.0(postcss@8.4.42):
     dependencies:
-      postcss: 8.4.41
+      postcss: 8.4.42
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.1.2:
@@ -7343,7 +7356,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.4.41:
+  postcss@8.4.42:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -7725,11 +7738,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.1
-      postcss: 8.4.41
-      postcss-import: 15.1.0(postcss@8.4.41)
-      postcss-js: 4.0.1(postcss@8.4.41)
-      postcss-load-config: 4.0.2(postcss@8.4.41)
-      postcss-nested: 6.2.0(postcss@8.4.41)
+      postcss: 8.4.42
+      postcss-import: 15.1.0(postcss@8.4.42)
+      postcss-js: 4.0.1(postcss@8.4.42)
+      postcss-load-config: 4.0.2(postcss@8.4.42)
+      postcss-nested: 6.2.0(postcss@8.4.42)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -7786,7 +7799,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0):
+  tsup@8.2.4(jiti@1.21.6)(postcss@8.4.42)(typescript@5.5.4)(yaml@2.5.0):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -7798,14 +7811,14 @@ snapshots:
       globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.41)(yaml@2.5.0)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.42)(yaml@2.5.0)
       resolve-from: 5.0.0
       rollup: 4.21.2
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.4.41
+      postcss: 8.4.42
       typescript: 5.5.4
     transitivePeerDependencies:
       - jiti

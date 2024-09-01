@@ -1,3 +1,5 @@
+import attempt from "lodash/attempt.js";
+import isError from "lodash/isError.js";
 import isNil from "lodash/isNil.js";
 import { useSyncExternalStore } from "react";
 
@@ -16,7 +18,13 @@ const localStorageStore = (key: string, options?: LocalStorageStoreOptions) => {
       return options?.defaultValue ?? null;
     },
     getSnapshot: () => {
-      return localStorage.getItem(key);
+      const item = attempt(localStorage.getItem.bind(localStorage), key);
+
+      if (isError(item)) {
+        return null;
+      }
+
+      return item;
     },
     subscribe: (listener: ListenerParameters[1]) => {
       const controller = new AbortController();
@@ -52,7 +60,7 @@ export const useLocalStorage = (
   const value = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const setValue = (newValue: string) => {
-    localStorage.setItem(key, newValue);
+    attempt(localStorage.setItem.bind(localStorage), key, newValue);
     dispatchEvent(event);
   };
 
