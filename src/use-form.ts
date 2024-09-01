@@ -1,4 +1,3 @@
-import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import type { z } from "zod";
 
 import entries from "lodash/entries.js";
@@ -7,7 +6,7 @@ import isNil from "lodash/isNil.js";
 import isString from "lodash/isString.js";
 import keys from "lodash/keys.js";
 import map from "lodash/map.js";
-import { useCallback, useState } from "react";
+import { type ChangeEvent, type Dispatch, type FormEvent, type SetStateAction, useCallback, useState } from "react";
 import { ZodError } from "zod";
 
 export type FieldErrors<StateType> =
