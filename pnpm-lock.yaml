@@ -19,8 +19,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@ethang/eslint-config':
-        specifier: ^19.2.11
-        version: 19.2.11(oak3demvuefthsrchlseniah2u)
+        specifier: ^19.3.0
+        version: 19.3.0(oak3demvuefthsrchlseniah2u)
       '@ethang/project-builder':
         specifier: ^2.5.8
         version: 2.5.8(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.2.0)(lodash@4.17.21)(simple-git@3.26.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.45)(typescript@5.5.4)(yaml@2.5.1))(typescript@5.5.4)
@@ -28,8 +28,8 @@ importers:
         specifier: ^4.17.7
         version: 4.17.7
       '@types/node':
-        specifier: ^22.5.3
-        version: 22.5.3
+        specifier: ^22.5.4
+        version: 22.5.4
       '@types/react':
         specifier: ^18.3.5
         version: 18.3.5
@@ -915,8 +915,8 @@ packages:
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ethang/eslint-config@19.2.11':
-    resolution: {integrity: sha512-8KGvDcC7hoUYRKlARxPxYaCM91jAD9xMwBNWYi6HdKz73ehU6urOtuPKdyCpGgmWgpSzXSqkGIuvkbJ0WQUfkg==}
+  '@ethang/eslint-config@19.3.0':
+    resolution: {integrity: sha512-5J/jlL9/0lfEeF4wUmnZiRzH9sNj8/QjEonUbfkfO3/5Jz/gi8Pqx/h58d4LQaO8sHIaayqdjBIuoWmbxQuo6Q==}
     engines: {node: '>=20'}
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.13.0
@@ -1265,8 +1265,8 @@ packages:
   '@types/mute-stream@0.0.4':
     resolution: {integrity: sha512-CPM9nzrCPPJHQNA9keH9CVkVI+WR5kMa+7XEs5jcGQ0VoAGnLv242w8lIVgwAEfmE4oufJRaTc9PNLQl0ioAow==}
 
-  '@types/node@22.5.3':
-    resolution: {integrity: sha512-njripolh85IA9SQGTAqbmnNZTdxv7X/4OYGPz8tgy5JDr8MP+uDBa921GpYEoDDnwm0Hmn5ZPeJgiiSTPoOzkQ==}
+  '@types/node@22.5.4':
+    resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4726,7 +4726,7 @@ snapshots:
 
   '@eslint/object-schema@2.1.4': {}
 
-  '@ethang/eslint-config@19.2.11(oak3demvuefthsrchlseniah2u)':
+  '@ethang/eslint-config@19.3.0(oak3demvuefthsrchlseniah2u)':
     dependencies:
       '@eslint-react/eslint-plugin': 1.13.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@eslint/js': 9.9.1
@@ -4792,7 +4792,7 @@ snapshots:
       '@inquirer/figures': 1.0.5
       '@inquirer/type': 1.5.3
       '@types/mute-stream': 0.0.4
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
       '@types/wrap-ansi': 3.0.0
       ansi-escapes: 4.3.2
       cli-spinners: 2.9.2
@@ -5071,9 +5071,9 @@ snapshots:
 
   '@types/mute-stream@0.0.4':
     dependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
 
-  '@types/node@22.5.3':
+  '@types/node@22.5.4':
     dependencies:
       undici-types: 6.19.8
 
