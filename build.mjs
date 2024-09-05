@@ -11,7 +11,7 @@ await projectBuilder('hooks', 'main', {
     },
   },
   tsupOptions: {
-    format: ['cjs', 'esm'],
+    format: ['esm'],
     minify: true,
     outDir: 'dist',
     entry: ['src/*'],
