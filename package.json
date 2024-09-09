@@ -21,7 +21,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.4.4",
+    "@ethang/eslint-config": "^19.4.6",
     "@ethang/project-builder": "^2.5.10",
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.5.4",
@@ -30,8 +30,8 @@
     "react": "^18.2.0",
     "rimraf": "^6.0.1",
     "type-fest": "^4.26.1",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.4.0"
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.5.0"
   },
   "peerDependencies": {
     "lodash": "^4.17.21",
