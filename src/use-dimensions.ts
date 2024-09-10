@@ -2,7 +2,7 @@ import { useCallback, useLayoutEffect, useState } from "react";
 
 import { animationInterval } from "./use-animation-interval.ts";
 
-type UseDiemensionsProperties = {
+type UseDimensionsProperties = {
   delay?: number;
   effectDeps: unknown[];
   initialDimensions?: DOMRect | Record<string, unknown>;
@@ -22,7 +22,7 @@ export const useDimensions = ({
   effectDeps = [],
   initialDimensions = {},
   liveMeasure = true,
-}: UseDiemensionsProperties): UseDimensionsReturn => {
+}: UseDimensionsProperties): UseDimensionsReturn => {
   const [dimensions, setDimensions] = useState<
     DOMRect | Record<string, unknown>
   >(initialDimensions);
