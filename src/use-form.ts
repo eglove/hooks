@@ -7,11 +7,11 @@ import map from "lodash/map.js";
 import { type ChangeEvent, type Dispatch, type FormEvent, type SetStateAction, useCallback, useState } from "react";
 import { type z, ZodError } from "zod";
 
-export type FieldErrors<StateType> =
+export type FieldErrors<StateType,> =
   | Record<keyof StateType, null | string[] | undefined>
   | undefined;
 
-export type UseFormProperties<StateType> = {
+export type UseFormProperties<StateType,> = {
   onChange?: (event: ChangeEvent) => unknown;
   onError?: (error: unknown) => unknown;
   onFieldError?: (error: FieldErrors<StateType>) => unknown;
@@ -19,7 +19,7 @@ export type UseFormProperties<StateType> = {
   zodValidator?: z.ZodTypeAny;
 };
 
-export type UseFormReturn<StateType> = {
+export type UseFormReturn<StateType,> = {
   clearFieldErrors: () => void;
   clearForm: () => void;
   fieldErrors: FieldErrors<StateType>;
@@ -35,7 +35,7 @@ export type UseFormReturn<StateType> = {
   validate: () => boolean;
 };
 
-const setAll = <ObjectType extends Record<string, unknown>>(
+const setAll = <ObjectType extends Record<string, unknown>,>(
   object: ObjectType,
   value?: unknown,
 ): ObjectType => {
@@ -48,7 +48,7 @@ const setAll = <ObjectType extends Record<string, unknown>>(
   return fromEntries as unknown as ObjectType;
 };
 
-export const useForm = <StateType extends Record<string, unknown>>(
+export const useForm = <StateType extends Record<string, unknown>,>(
   initialState: StateType,
   properties?: UseFormProperties<StateType>,
 ): UseFormReturn<StateType> => {

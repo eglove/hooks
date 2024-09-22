@@ -1,8 +1,8 @@
 import { useEffect, type useRef, useState } from "react";
 
-type UseIsOnscreenReturn<ElementType> = [boolean, ElementType];
+type UseIsOnscreenReturn<ElementType,> = [boolean, ElementType];
 
-export const useIsOnscreen = <ElementType extends ReturnType<typeof useRef>>(
+export const useIsOnscreen = <ElementType extends ReturnType<typeof useRef>,>(
   elementReference: ElementType,
 ): UseIsOnscreenReturn<ElementType> => {
   const [isOnscreen, setIsOnscreen] = useState(false);

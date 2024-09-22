@@ -1,6 +1,6 @@
 {
   "name": "@ethang/hooks",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "",
   "repository": "https://github.com/eglove/hooks",
   "license": "ISC",
@@ -23,7 +23,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.7.4",
+    "@ethang/eslint-config": "^19.8.2",
     "@ethang/project-builder": "^2.6.1",
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.5.5",
@@ -37,6 +37,7 @@
     "typescript-eslint": "^8.6.0"
   },
   "peerDependencies": {
+    "@ethang/toolbelt": "^4.3.0",
     "lodash": "^4.17.21",
     "react": "^18.3.1",
     "use-sync-external-store": "^1.2.2",

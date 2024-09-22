@@ -25,8 +25,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@ethang/eslint-config':
-        specifier: ^19.7.4
-        version: 19.7.4(mfjbhcizdavkuguixcizopuicm)
+        specifier: ^19.8.2
+        version: 19.8.2(p2spdnrt7n2yxz5ius2cvewne4)
       '@ethang/project-builder':
         specifier: ^2.6.1
         version: 2.6.1(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@11.0.2)(lodash@4.17.21)(simple-git@3.27.0)(sort-package-json@2.10.1)(tsup@8.3.0(jiti@1.21.6)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1))(typescript@5.6.2)
@@ -1136,8 +1136,8 @@ packages:
     resolution: {integrity: sha512-vH9PiIMMwvhCx31Af3HiGzsVNULDbyVkHXwlemn/B0TFj/00ho3y55efXrUZTfQipxoHC5u4xq6zblww1zm1Ig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ethang/eslint-config@19.7.4':
-    resolution: {integrity: sha512-78YGOdwkftnQAP+mc/IHeJu6KNTG852vBYREKeLbWDBMwbgrDereQ5UYNGMglNDraHcd1UpbJX74etCRRYX/jg==}
+  '@ethang/eslint-config@19.8.2':
+    resolution: {integrity: sha512-kp/edBJR2Q+A7IUn/sb5IYOZzrBzs1uXOIJNBOOIaLTXJ7Ret9ANKxuvnDv/64aeaknoHhYxnwav2DH6zBYBUA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@cspell/eslint-plugin': ^8.14.4
@@ -1147,6 +1147,7 @@ packages:
       '@eslint/json': ^0.4.0
       '@eslint/markdown': ^6.1.0
       '@stylistic/eslint-plugin': ^2.8.0
+      '@stylistic/eslint-plugin-ts': ^2.8.0
       '@tanstack/eslint-plugin-query': ^5.57.1
       '@tanstack/eslint-plugin-router': ^1.58.6
       '@typescript-eslint/parser': ^8.6.0
@@ -1155,7 +1156,7 @@ packages:
       eslint-plugin-barrel-files: ^2.1.0
       eslint-plugin-compat: ^6.0.1
       eslint-plugin-depend: ^0.11.0
-      eslint-plugin-exception-handling: ^1.4.2
+      eslint-plugin-exception-handling: ^1.4.3
       eslint-plugin-jsx-a11y: ^6.10.0
       eslint-plugin-lodash: ^8.0.0
       eslint-plugin-n: ^17.10.3
@@ -1491,6 +1492,12 @@ packages:
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
+
+  '@stylistic/eslint-plugin-ts@2.8.0':
+    resolution: {integrity: sha512-VukJqkRlC2psLKoIHJ+4R3ZxLJfWeizGGX+X5ZxunjXo4MbxRNtwu5UvXuerABg4s2RV6Z3LFTdm0WvI4+RAMQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: '>=8.40.0'
 
   '@stylistic/eslint-plugin@2.8.0':
     resolution: {integrity: sha512-Ufvk7hP+bf+pD35R/QfunF793XlSRIC7USr3/EdgduK9j13i2JjmsM0LUz3/foS+jDYp2fzyWZA9N44CPur0Ow==}
@@ -5353,7 +5360,7 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
-  '@ethang/eslint-config@19.7.4(mfjbhcizdavkuguixcizopuicm)':
+  '@ethang/eslint-config@19.8.2(p2spdnrt7n2yxz5ius2cvewne4)':
     dependencies:
       '@cspell/eslint-plugin': 8.14.4(eslint@9.11.0(jiti@1.21.6))
       '@eslint-react/eslint-plugin': 1.14.2(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
@@ -5362,6 +5369,7 @@ snapshots:
       '@eslint/json': 0.4.0(eslint@9.11.0(jiti@1.21.6))
       '@eslint/markdown': 6.1.0(eslint@9.11.0(jiti@1.21.6))
       '@stylistic/eslint-plugin': 2.8.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
+      '@stylistic/eslint-plugin-ts': 2.8.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
       '@tanstack/eslint-plugin-query': 5.57.1(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
       '@tanstack/eslint-plugin-router': 1.58.6(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
       '@typescript-eslint/parser': 8.6.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
@@ -5727,6 +5735,16 @@ snapshots:
     optional: true
 
   '@rtsao/scc@1.1.0': {}
+
+  '@stylistic/eslint-plugin-ts@2.8.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)':
+    dependencies:
+      '@typescript-eslint/utils': 8.6.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
+      eslint: 9.11.0(jiti@1.21.6)
+      eslint-visitor-keys: 4.0.0
+      espree: 10.1.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   '@stylistic/eslint-plugin@2.8.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)':
     dependencies:
