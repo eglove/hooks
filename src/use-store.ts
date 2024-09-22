@@ -1,50 +1,37 @@
-import isNil from "lodash/isNil.js";
-import isObject from "lodash/isObject.js";
-import keys from "lodash/keys.js";
+import type { Get, Join, Paths, Split } from "type-fest";
+
+import { propertiesIsEqual } from "@ethang/toolbelt/object/properties-is-equal.js";
+import entries from "lodash/entries.js";
+import get from "lodash/get.js";
+import values from "lodash/values.js";
 import { useSyncExternalStoreWithSelector } from "use-sync-external-store/shim/with-selector.js";
 
-export const useStore = <State, Selection>(
+export const useStore = <
+  State,
+  // @ts-expect-error this works, will infer number keys to string
+  Selector extends Record<string, Readonly<Split<Paths<State>, ".">>>,
+>(
   subscribe: (onStoreChange: () => void) => () => void,
   getSnapshot: () => State,
   getServerSnapshot: () => State,
-  selector: (state: State) => Selection,
-  _shallow = shallow,
-): Selection => {
+  selector: Selector,
+) => {
   return useSyncExternalStoreWithSelector(
     subscribe,
     getSnapshot,
     getServerSnapshot,
-    selector,
-    _shallow,
+    (state) => {
+      const value = {} as { [K in keyof Selector]: Get<State, Join<Selector[K], ".">> };
+
+      for (const [key, path] of entries(selector)) {
+        value[key as keyof Selector] = get(state, path) as Get<State, Join<typeof path, ".">>;
+      }
+
+      return value as { [K in keyof Selector]: Get<State, Join<Selector[K], ".">> };
+    },
+    (a, b) => {
+      // @ts-expect-error this works, will infer number keys to string
+      return propertiesIsEqual(a, b, values(selector));
+    },
   );
-};
-
-const shallow = <T>(objectA: T, objectB: T) => {
-  if (Object.is(objectA, objectB)) {
-    return true;
-  }
-
-  if (
-    !isObject(objectA) ||
-    isNil(objectA) ||
-    !isObject(objectB) ||
-    isNil(objectB)
-  ) {
-    return false;
-  }
-
-  const keysA = keys(objectA);
-  if (keysA.length !== keys(objectB).length) {
-    return false;
-  }
-
-  for (const keyA of keysA) {
-    if (
-      !Object.hasOwn(objectB, keyA) ||
-      !Object.is(objectA[keyA as keyof T], objectB[keyA as keyof T])
-    ) {
-      return false;
-    }
-  }
-  return true;
 };

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@ethang/toolbelt':
+        specifier: ^4.3.0
+        version: 4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8)
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -1177,6 +1180,19 @@ packages:
       tsup: ^8.3.0
       typescript: ^5.6.2
 
+  '@ethang/toolbelt@4.3.0':
+    resolution: {integrity: sha512-RqRqB1ZsxPCg2WN5FeZEv0Yo44CIIATtJNj8/7VCWOVzGfqXJQCLNLkSipUOTpV3dNGasyCxImjfskMUMZnkzw==}
+    peerDependencies:
+      '@phensley/cldr': ^1.9.0
+      '@phensley/unit-converter': ^1.9.0
+      '@tanstack/store': ^0.5.5
+      '@total-typescript/ts-reset': ^0.6.1
+      idb: ^8.0.0
+      immer: ^10.1.1
+      lodash: ^4.17.21
+      uuid: ^10.0.0
+      zod: ^3.23.8
+
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
     engines: {node: '>=12.22'}
@@ -1349,6 +1365,42 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@phensley/cldr-core@1.9.0':
+    resolution: {integrity: sha512-ia3BmNmGJAvMhOR5+ILnmv7OatX9zSB2a9cSDzBGxRrMv0IwpO4pE8DaAM+dwTtDKvE/yu4lziyoLoE70wImlw==}
+
+  '@phensley/cldr-types@1.9.0':
+    resolution: {integrity: sha512-92ycuMIejJ+tMKi4hDonJXFkViUqJqrBT26Azya6CRPmvLxpo6MlWfEAoqcVwCEKcXJq/D1+/9dTZMHHI00quQ==}
+
+  '@phensley/cldr-utils@1.9.0':
+    resolution: {integrity: sha512-hNXFP42ZFYfx2oCAT7PcZm8OwLpZkKMihJRCd7rsfoc7ghcmtD5HG07plTKhu4OyPeEQNAWmxeuk6GH8SSwVGQ==}
+
+  '@phensley/cldr@1.9.0':
+    resolution: {integrity: sha512-4p+xCLRgLcfCj+oMqyUYgzNu7eJWqhwlCZ+EmpZGVUvf6s7KSfMkzeRdoROTkgiwctVb20OSNzSP8DFCGVk85w==}
+
+  '@phensley/decimal@1.9.0':
+    resolution: {integrity: sha512-mD1QKMqDqdm0nMxv5R16yqiLPbz9QGCG+BsfSJhYc22rROFRmXFUbsc+DP4+f7mcZPsPcDR03B5s8+2Ut8DQ0g==}
+
+  '@phensley/language-tag@1.9.0':
+    resolution: {integrity: sha512-nj2uFsnp2SSD/DEGvLqcrpTXerIe9yShGndnwY7p3Z6Ep4m6+GkrgZCNJUc8rKcXWgQmRGC2TUzwG/LlBVtuCA==}
+
+  '@phensley/locale-matcher@1.9.0':
+    resolution: {integrity: sha512-/cfxhrTQU8vGc9r0p9rdAEvUNOPIGkF1oPyNzyg/gFNa9yv5qPUm30XlYF+KD6zM8wLWCT1ABD8KGpV6aEFnnw==}
+
+  '@phensley/locale@1.9.0':
+    resolution: {integrity: sha512-9K+AMi7qTTIhfVkmvuM9QZ5K16/GtDe7MX1d8LsDPnGdCMifsJp0ji0R6GgiHIf50/otwhjO8nlCXGKXa82yIw==}
+
+  '@phensley/messageformat@1.9.0':
+    resolution: {integrity: sha512-6D4GL0ciwXnvgTEpfXgcKiGDyT0BILNh7qw3HIndwp1IkWKO+WGaJ5N71dNiudOFUQCQKWtxC3G9b/jfHkLIiw==}
+
+  '@phensley/plurals@1.9.0':
+    resolution: {integrity: sha512-vukInL2RPywl+bUWD9MqTVfz7L0VozlnuFck6aY5pqWutICcX+FikMk/j318NjNjCVdDSE10LUrEkK/3rBHqBg==}
+
+  '@phensley/timezone@1.9.0':
+    resolution: {integrity: sha512-4RNSMyI/yhNafRmjlGDbUNuw/N8SmPCNc3t7FBGL0H1hXOx9wEsUivtwZNSyN49tAvF9PHwlzTudXjKB6gXPsA==}
+
+  '@phensley/unit-converter@1.9.0':
+    resolution: {integrity: sha512-XdlGwfwQKDOlMUgWZf05jcAQ/ZAgvlaV1UiYvQJma090VcKLjOnvKlHtbV1fXDz3L+icTyeHAcgiNTMV6dAGeA==}
+
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -1455,6 +1507,12 @@ packages:
     resolution: {integrity: sha512-8nqu8vYqV4hA7Bq6fBi+YqwH7n6C9U/uMQCwyIEej1Qvzsblb/QHfSMYk8T6fWcnAgmgvPETWgar9/K+wd17ng==}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
+
+  '@tanstack/store@0.5.5':
+    resolution: {integrity: sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==}
+
+  '@total-typescript/ts-reset@0.6.1':
+    resolution: {integrity: sha512-cka47fVSo6lfQDIATYqb/vO1nvFfbPw7uWLayIXIhGETj0wcOOlrlkobOMDNQOFr9QOafegUPq13V2+6vtD7yg==}
 
   '@tybys/wasm-util@0.9.0':
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
@@ -2691,9 +2749,15 @@ packages:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
 
+  idb@8.0.0:
+    resolution: {integrity: sha512-l//qvlAKGmQO31Qn7xdzagVPPaHTxXx199MhrAFuVBTPqydcPYBWjkrbv4Y0ktB+GmWOiwHl237UUOrLmQxLvw==}
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
+
+  immer@10.1.1:
+    resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
 
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -3915,6 +3979,10 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    hasBin: true
 
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
@@ -5326,6 +5394,18 @@ snapshots:
       tsup: 8.3.0(jiti@1.21.6)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript: 5.6.2
 
+  '@ethang/toolbelt@4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8)':
+    dependencies:
+      '@phensley/cldr': 1.9.0
+      '@phensley/unit-converter': 1.9.0
+      '@tanstack/store': 0.5.5
+      '@total-typescript/ts-reset': 0.6.1
+      idb: 8.0.0
+      immer: 10.1.1
+      lodash: 4.17.21
+      uuid: 10.0.0
+      zod: 3.23.8
+
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/momoa@3.2.1': {}
@@ -5522,6 +5602,77 @@ snapshots:
   '@oxc-resolver/binding-win32-x64-msvc@1.11.0':
     optional: true
 
+  '@phensley/cldr-core@1.9.0':
+    dependencies:
+      '@phensley/cldr-types': 1.9.0
+      '@phensley/cldr-utils': 1.9.0
+      '@phensley/decimal': 1.9.0
+      '@phensley/language-tag': 1.9.0
+      '@phensley/locale': 1.9.0
+      '@phensley/locale-matcher': 1.9.0
+      '@phensley/messageformat': 1.9.0
+      '@phensley/plurals': 1.9.0
+      '@phensley/timezone': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/cldr-types@1.9.0':
+    dependencies:
+      tslib: 2.7.0
+
+  '@phensley/cldr-utils@1.9.0':
+    dependencies:
+      tslib: 2.7.0
+
+  '@phensley/cldr@1.9.0':
+    dependencies:
+      '@phensley/cldr-core': 1.9.0
+      '@phensley/cldr-utils': 1.9.0
+      '@phensley/messageformat': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/decimal@1.9.0':
+    dependencies:
+      tslib: 2.7.0
+
+  '@phensley/language-tag@1.9.0':
+    dependencies:
+      tslib: 2.7.0
+
+  '@phensley/locale-matcher@1.9.0':
+    dependencies:
+      '@phensley/language-tag': 1.9.0
+      '@phensley/locale': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/locale@1.9.0':
+    dependencies:
+      '@phensley/language-tag': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/messageformat@1.9.0':
+    dependencies:
+      '@phensley/cldr-utils': 1.9.0
+      '@phensley/decimal': 1.9.0
+      '@phensley/plurals': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/plurals@1.9.0':
+    dependencies:
+      '@phensley/decimal': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/timezone@1.9.0':
+    dependencies:
+      '@phensley/cldr-utils': 1.9.0
+      tslib: 2.7.0
+
+  '@phensley/unit-converter@1.9.0':
+    dependencies:
+      '@phensley/cldr-types': 1.9.0
+      '@phensley/cldr-utils': 1.9.0
+      '@phensley/decimal': 1.9.0
+      tslib: 2.7.0
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -5604,6 +5755,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  '@tanstack/store@0.5.5': {}
+
+  '@total-typescript/ts-reset@0.6.1': {}
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
@@ -7219,7 +7374,11 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
+  idb@8.0.0: {}
+
   ignore@5.3.2: {}
+
+  immer@10.1.1: {}
 
   import-fresh@3.3.0:
     dependencies:
@@ -8651,6 +8810,8 @@ snapshots:
       react: 18.3.1
 
   util-deprecate@1.0.2: {}
+
+  uuid@10.0.0: {}
 
   validate-npm-package-license@3.0.4:
     dependencies:
