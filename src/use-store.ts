@@ -30,8 +30,13 @@ export const useStore = <
       return value as { [K in keyof Selector]: Get<State, Join<Selector[K], ".">> };
     },
     (a, b) => {
-      // @ts-expect-error this works, will infer number keys to string
-      return propertiesIsEqual(a, b, values(selector));
+      let isEqual = true;
+      for (const value of values(selector)) {
+        // @ts-expect-error this works, will infer number keys to string
+        isEqual = propertiesIsEqual(a, b, value);
+      }
+
+      return isEqual;
     },
   );
 };
