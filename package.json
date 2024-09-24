@@ -23,13 +23,13 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.8.4",
+    "@ethang/eslint-config": "^19.8.5",
     "@ethang/project-builder": "^2.6.1",
-    "@types/lodash": "^4.17.7",
-    "@types/node": "^22.5.5",
+    "@types/lodash": "^4.17.9",
+    "@types/node": "^22.6.1",
     "@types/react": "^18.3.8",
     "@types/use-sync-external-store": "^0.0.6",
-    "eslint": "^9.11.0",
+    "eslint": "^9.11.1",
     "react": "^18.2.0",
     "rimraf": "^6.0.1",
     "type-fest": "^4.26.1",
