@@ -1,7 +1,7 @@
 import { projectBuilder } from '@ethang/project-builder/project-builder.js';
 
 await projectBuilder('hooks', 'main', {
-  scripts: ['UPDATE', 'DEDUPE', 'LINT'],
+  scripts: ['bun x taze latest -I', 'bun lint'],
   publishDirectory: 'dist',
   isLibrary: true,
   tsConfigOverrides: {
