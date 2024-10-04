@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const isBrowser = "undefined" !== typeof window;
+const isBrowser = "undefined" !== typeof globalThis;
 
 export const useWindowSize = (
   initialWidth = Number.POSITIVE_INFINITY,

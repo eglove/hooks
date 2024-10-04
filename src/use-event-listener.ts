@@ -13,11 +13,11 @@ export const useEventListener = <Type extends keyof WindowEventMapPlus,>(
     const controller = new AbortController();
     const { signal } = controller;
 
-    if ("undefined" === typeof window) {
+    if ("undefined" === typeof globalThis) {
       return;
     }
 
-    window.addEventListener(type, listener, {
+    globalThis.addEventListener(type, listener, {
       signal,
       ...options,
     });
