@@ -39,13 +39,11 @@ const setAll = <ObjectType extends Record<string, unknown>,>(
   object: ObjectType,
   value?: unknown,
 ): ObjectType => {
-  const fromEntries = Object.fromEntries(
+  return Object.fromEntries(
     map(entries(object), ([key]) => {
       return [key, value];
     }),
-  );
-
-  return fromEntries as unknown as ObjectType;
+  ) as unknown as ObjectType;
 };
 
 export const useForm = <StateType extends Record<string, unknown>,>(
