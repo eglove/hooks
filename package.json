@@ -1,6 +1,6 @@
 {
   "name": "@ethang/hooks",
-  "version": "2.2.6",
+  "version": "2.2.6-beta.0",
   "description": "",
   "repository": "https://github.com/eglove/hooks",
   "license": "ISC",
@@ -26,8 +26,8 @@
     "@ethang/eslint-config": "^19.14.0",
     "@ethang/project-builder": "^3.0.1",
     "@types/lodash": "^4.17.12",
-    "@types/node": "^22.7.8",
-    "@types/react": "^18.3.11",
+    "@types/node": "^22.7.9",
+    "@types/react": "^18.3.12",
     "@types/use-sync-external-store": "^0.0.6",
     "eslint": "^9.13.0",
     "rimraf": "^6.0.1",
